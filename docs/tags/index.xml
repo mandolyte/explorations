@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tags on Explorations ... Go Packages</title>
+    <link>https://mandolyte.github.io/explorations/tags/</link>
+    <description>Recent content in Tags on Explorations ... Go Packages</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <copyright>Copyright &amp;copy; 2018 - Cecil New</copyright>
+    
+	<atom:link href="https://mandolyte.github.io/explorations/tags/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+  </channel>
+</rss>

@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Posts on Explorations ... Go Packages</title>
+    <link>https://mandolyte.github.io/explorations/posts/</link>
+    <description>Recent content in Posts on Explorations ... Go Packages</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <copyright>Copyright &amp;copy; 2018 - Cecil New</copyright>
+    <lastBuildDate>Thu, 12 Apr 2018 19:07:42 -0400</lastBuildDate>
+    
+	<atom:link href="https://mandolyte.github.io/explorations/posts/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>My third Post</title>
+      <link>https://mandolyte.github.io/explorations/posts/my-fourth-post/</link>
+      <pubDate>Thu, 12 Apr 2018 19:07:42 -0400</pubDate>
+      
+      <guid>https://mandolyte.github.io/explorations/posts/my-fourth-post/</guid>
+      <description>Heading 1 Heading 2 Heading 3 Heading 4 Heading 5 Heading 6 Finally I get to a ~significant~ sentence. phew!&amp;hellip;</description>
+    </item>
+    
+    <item>
+      <title>My third Post</title>
+      <link>https://mandolyte.github.io/explorations/posts/my-third-post/</link>
+      <pubDate>Thu, 12 Apr 2018 19:07:42 -0400</pubDate>
+      
+      <guid>https://mandolyte.github.io/explorations/posts/my-third-post/</guid>
+      <description>Heading 1 First paragraph about bullets:
+ bullet bullet bullet  Link to my fork is here
+A Go code snippet:
+func main() { key := &amp;quot;abcdefghijklmnopqrstuvwxyz123456&amp;quot; txt := `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</description>
+    </item>
+    
+    <item>
+      <title>My Second Post</title>
+      <link>https://mandolyte.github.io/explorations/posts/my-second-post/</link>
+      <pubDate>Wed, 11 Apr 2018 19:07:42 -0400</pubDate>
+      
+      <guid>https://mandolyte.github.io/explorations/posts/my-second-post/</guid>
+      <description>Heading 1 First paragraph about bullets:
+ bullet bullet bullet  An image!</description>
+    </item>
+    
+    <item>
+      <title>My First Post</title>
+      <link>https://mandolyte.github.io/explorations/posts/my-first-post/</link>
+      <pubDate>Tue, 10 Apr 2018 19:07:42 -0400</pubDate>
+      
+      <guid>https://mandolyte.github.io/explorations/posts/my-first-post/</guid>
+      <description> Heading 1 First paragraph about bullets:
+ bullet bullet bullet  some code:
+func main() { // a comment }  </description>
+    </item>
+    
+  </channel>
+</rss>

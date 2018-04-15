@@ -1,0 +1,23 @@
+baseurl = "https://mandolyte.github.io/explorations"
+title = "Explorations ... Go Packages"
+copyright = "Copyright &copy; 2018 - Cecil New"
+canonifyurls = true
+theme = "kiera"
+publishDir = "docs"
+
+paginate = 3
+
+summaryLength = 30
+enableEmoji = true
+pygmentsCodeFences = true
+
+[author]
+    name = "Cecil New"
+    github = "mandolyte"
+    linkedin = "cecil-new-06835714/"
+    gplus = "CecilNew"
+    facebook = ""
+
+[params]
+    tagline = "... tender mercies."
+    favicon = "/images/favicon.ico"

@@ -1,2 +1,2 @@
-# explorations
-Blog - Explorations of Go Packages
+# The Explorations Blog
+Source for explorations blog
