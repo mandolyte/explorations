@@ -8,6 +8,31 @@
   </url>
   
   <url>
+    <loc>https://mandolyte.github.io/explorations/posts/xml-identity-transform/</loc>
+    <lastmod>2018-04-14T21:52:09-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://mandolyte.github.io/explorations/posts/encoding-xml-unmarshal/</loc>
+    <lastmod>2018-04-14T21:42:55-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://mandolyte.github.io/explorations/posts/encoding-xml-decode/</loc>
+    <lastmod>2018-04-14T21:41:38-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://mandolyte.github.io/explorations/posts/using-chromebook-for-go-development/</loc>
+    <lastmod>2018-04-14T21:40:30-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://mandolyte.github.io/explorations/posts/hugo-githubpages-chromebook/</loc>
+    <lastmod>2018-04-14T21:40:24-04:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://mandolyte.github.io/explorations/categories/</loc>
     <priority>0</priority>
   </url>
@@ -15,6 +40,12 @@
   <url>
     <loc>https://mandolyte.github.io/explorations/</loc>
     <lastmod>2014-04-09T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://mandolyte.github.io/explorations/posts/</loc>
+    <lastmod>2018-04-14T21:52:09-04:00</lastmod>
     <priority>0</priority>
   </url>
   

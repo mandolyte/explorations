@@ -6,51 +6,56 @@
     <description>Recent content in Posts on Explorations ... Go Packages</description>
     <generator>Hugo -- gohugo.io</generator>
     <copyright>Copyright &amp;copy; 2018 - Cecil New</copyright>
-    <lastBuildDate>Thu, 12 Apr 2018 19:07:42 -0400</lastBuildDate>
+    <lastBuildDate>Sat, 14 Apr 2018 21:52:09 -0400</lastBuildDate>
     
 	<atom:link href="https://mandolyte.github.io/explorations/posts/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>My third Post</title>
-      <link>https://mandolyte.github.io/explorations/posts/my-fourth-post/</link>
-      <pubDate>Thu, 12 Apr 2018 19:07:42 -0400</pubDate>
+      <title>Xml Identity Transform</title>
+      <link>https://mandolyte.github.io/explorations/posts/xml-identity-transform/</link>
+      <pubDate>Sat, 14 Apr 2018 21:52:09 -0400</pubDate>
       
-      <guid>https://mandolyte.github.io/explorations/posts/my-fourth-post/</guid>
-      <description>Heading 1 Heading 2 Heading 3 Heading 4 Heading 5 Heading 6 Finally I get to a ~significant~ sentence. phew!&amp;hellip;</description>
+      <guid>https://mandolyte.github.io/explorations/posts/xml-identity-transform/</guid>
+      <description>An identity transformation is one that reproduces the input. The article here, shows examples using XML Stylesheets and XQuery.
+The Go XML package cannot exactly do an identity transform because the standard marshal function does not handle processing instructions or directives.</description>
     </item>
     
     <item>
-      <title>My third Post</title>
-      <link>https://mandolyte.github.io/explorations/posts/my-third-post/</link>
-      <pubDate>Thu, 12 Apr 2018 19:07:42 -0400</pubDate>
+      <title>Encoding Xml Unmarshal</title>
+      <link>https://mandolyte.github.io/explorations/posts/encoding-xml-unmarshal/</link>
+      <pubDate>Sat, 14 Apr 2018 21:42:55 -0400</pubDate>
       
-      <guid>https://mandolyte.github.io/explorations/posts/my-third-post/</guid>
-      <description>Heading 1 First paragraph about bullets:
- bullet bullet bullet  Link to my fork is here
-A Go code snippet:
-func main() { key := &amp;quot;abcdefghijklmnopqrstuvwxyz123456&amp;quot; txt := `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</description>
+      <guid>https://mandolyte.github.io/explorations/posts/encoding-xml-unmarshal/</guid>
+      <description>Most examples using Unmarshal show structs that are setup ahead of time to capture specific contents of the XML document. While this is the common use case, a struct can be designed to capture the document in a generic fashion, i.</description>
     </item>
     
     <item>
-      <title>My Second Post</title>
-      <link>https://mandolyte.github.io/explorations/posts/my-second-post/</link>
-      <pubDate>Wed, 11 Apr 2018 19:07:42 -0400</pubDate>
+      <title>Encoding Xml Decode</title>
+      <link>https://mandolyte.github.io/explorations/posts/encoding-xml-decode/</link>
+      <pubDate>Sat, 14 Apr 2018 21:41:38 -0400</pubDate>
       
-      <guid>https://mandolyte.github.io/explorations/posts/my-second-post/</guid>
-      <description>Heading 1 First paragraph about bullets:
- bullet bullet bullet  An image!</description>
+      <guid>https://mandolyte.github.io/explorations/posts/encoding-xml-decode/</guid>
+      <description>Background I plan to explore a number of Go packages. These will often come with useful samples or utilities. Enjoy!
+All the code for this post is in this repo.</description>
     </item>
     
     <item>
-      <title>My First Post</title>
-      <link>https://mandolyte.github.io/explorations/posts/my-first-post/</link>
-      <pubDate>Tue, 10 Apr 2018 19:07:42 -0400</pubDate>
+      <title>Using Chromebook for Go Development</title>
+      <link>https://mandolyte.github.io/explorations/posts/using-chromebook-for-go-development/</link>
+      <pubDate>Sat, 14 Apr 2018 21:40:30 -0400</pubDate>
       
-      <guid>https://mandolyte.github.io/explorations/posts/my-first-post/</guid>
-      <description> Heading 1 First paragraph about bullets:
- bullet bullet bullet  some code:
-func main() { // a comment }  </description>
+      <guid>https://mandolyte.github.io/explorations/posts/using-chromebook-for-go-development/</guid>
+      <description>The process for installing a number of Linux variants is fairly well documented and findable with web searches. I have spent some time playing with this and have settled on an approach that works well for me.</description>
+    </item>
+    
+    <item>
+      <title>Hugo GithubPages Chromebook</title>
+      <link>https://mandolyte.github.io/explorations/posts/hugo-githubpages-chromebook/</link>
+      <pubDate>Sat, 14 Apr 2018 21:40:24 -0400</pubDate>
+      
+      <guid>https://mandolyte.github.io/explorations/posts/hugo-githubpages-chromebook/</guid>
+      <description>I confess that there is little to like about Google&amp;rsquo;s Blogger platform. It certainly has not kept pace with offerings like Wordpress or Medium. I suspect that it would suffice for normal text only blogging, but I have a technical blog and getting code snippets to work well is painful.</description>
     </item>
     
   </channel>

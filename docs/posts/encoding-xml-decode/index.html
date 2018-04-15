@@ -1,0 +1,154 @@
+<!doctype html>
+
+<html lang="en">
+
+<head>
+  <title>Explorations ... Go Packages</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="The HTML5 Herald" />
+  <meta name="author" content="Cecil New" />
+  <meta name="generator" content="Hugo 0.38.2" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Slab|Ruda" />
+  <link rel="stylesheet" type="text/css" href="https://mandolyte.github.io/explorations/css/styles.css" />
+</head>
+
+<body>
+  <div id="container">
+    <header>
+      <h1>
+                <a href="https://mandolyte.github.io/explorations/">Explorations &hellip; Go Packages</a>
+            </h1>
+
+      <ul id="social-media">
+         
+        <li><a href="https://www.linkedin.com/in/cecil-new-06835714/"><i class="fa fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+         
+        <li><a href="https://github.com/mandolyte"><i class="fa fa-github fa-lg" aria-hidden="true"></i></a></li>
+            
+	<li> <a href="https://google.com/+CecilNew"><i class="fa fa-google-plus fa-lg" aria-hidden="true"></i></a></li>
+        
+      </ul>
+      
+      <p><em>&hellip; tender mercies.</em></p>
+      
+    </header>
+
+    
+<nav>
+    <ul>
+        
+        <li>
+            <a class="" href="https://mandolyte.github.io/explorations/about/">
+                <i class="fa-li fa  fa-lg"></i><span>About me</span>
+            </a>
+        </li>
+        
+    </ul>
+</nav>
+
+    <main>
+
+
+
+
+<article>
+
+    <h1>Encoding Xml Decode</h1>
+
+    
+        <aside>
+    <ul>
+        <li>
+            <time class="post-date" datetime="2018-04-14T21:41:38-04:00">Apr 14, 2018</time>
+        </li>
+        
+        
+
+        
+
+        <li>1 min read</li>
+    </ul>
+</aside>
+    
+
+    
+
+<h1 id="background">Background</h1>
+
+<p>I plan to explore a number of Go packages. These will often
+come with useful samples or utilities. Enjoy!</p>
+
+<p>All the code for this post is in this <a href="https://github.com/mandolyte/xml-utils">repo</a>.</p>
+
+<h1 id="a-generic-xml-parser">A Generic XML Parser</h1>
+
+<p><img src="https://mandolyte.github.io/explorations/images/xml-parse-any-output.png#float-right" alt="Parse XML output" />
+The first example will be a generic parser: <code>parseAny.go</code>.
+This example will parse any XML, identify all element and attributes
+and output a CSV file as shown. The input XML for this is below.</p>
+
+<p>The depth of an element and the element type are two necessary
+ingredients to create a pretty printer Go program.</p>
+
+<p>While this code may be useful to get a quick understanding of
+content of an XML file, its likely to be more valuable as a
+starting point to tweak and make into something you need.</p>
+
+<p>Here is the input XML for the above:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#75715e">&lt;?target instructions?&gt;</span>
+<span style="color:#75715e">&lt;!this-is-a-directive&gt;</span>
+<span style="color:#f92672">&lt;Person&gt;</span>
+<span style="color:#f92672">&lt;FullName&gt;</span>Grace R. Emlin<span style="color:#f92672">&lt;/FullName&gt;</span>
+<span style="color:#f92672">&lt;Company&gt;</span>Example Inc.<span style="color:#f92672">&lt;/Company&gt;</span>
+<span style="color:#f92672">&lt;Email</span> <span style="color:#a6e22e">where=</span><span style="color:#e6db74">&#34;home&#34;</span><span style="color:#f92672">&gt;</span>
+<span style="color:#f92672">&lt;Addr&gt;</span>gre@example.com<span style="color:#f92672">&lt;/Addr&gt;</span>
+<span style="color:#f92672">&lt;/Email&gt;</span>
+<span style="color:#f92672">&lt;Email</span> <span style="color:#a6e22e">where=</span><span style="color:#e6db74">&#39;work&#39;</span><span style="color:#f92672">&gt;</span>
+<span style="color:#f92672">&lt;Addr&gt;</span>gre@work.com<span style="color:#f92672">&lt;/Addr&gt;</span>
+<span style="color:#f92672">&lt;/Email&gt;</span>
+<span style="color:#f92672">&lt;Group&gt;</span>
+<span style="color:#f92672">&lt;Value&gt;</span>Friends<span style="color:#f92672">&lt;/Value&gt;</span>
+<span style="color:#f92672">&lt;Value&gt;</span>Squash<span style="color:#f92672">&lt;/Value&gt;</span>
+<span style="color:#f92672">&lt;/Group&gt;</span>
+<span style="color:#f92672">&lt;City&gt;</span>Hanga Roa<span style="color:#f92672">&lt;/City&gt;</span>
+<span style="color:#f92672">&lt;State&gt;</span>Easter Island<span style="color:#f92672">&lt;/State&gt;</span>
+<span style="color:#75715e">&lt;!-- this is a comment --&gt;</span>
+<span style="color:#f92672">&lt;/Person&gt;</span></code></pre></div>
+
+</article>
+
+
+<section class="post-nav">
+    <ul>
+        
+        <li>
+            <a href="https://mandolyte.github.io/explorations/posts/using-chromebook-for-go-development/"><i class="fa fa-chevron-circle-left"></i> Using Chromebook for Go Development</a>
+        </li>
+        
+        
+        <li>
+            <a href="https://mandolyte.github.io/explorations/posts/encoding-xml-unmarshal/">Encoding Xml Unmarshal <i class="fa fa-chevron-circle-right"></i> </a>
+        </li>
+        
+    </ul>
+</section>
+    
+
+
+
+
+
+</main>
+    <footer>
+        <h6>Copyright &copy; 2018 - Cecil New | 
+            Rendered by <a href="https://gohugo.io" title="Hugo">Hugo</a> |
+            <a href="https://mandolyte.github.io/explorationsindex.xml">Subscribe</a></h6>
+    </footer>
+</div>
+<script src="https://mandolyte.github.io/explorations/js/scripts.js"></script>
+</body>
+
+</html>

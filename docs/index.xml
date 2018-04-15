@@ -22,5 +22,52 @@ Meaning, I&amp;rsquo;m an elder in the Presbyterian Church of America and I&amp;
 You can find out more by peeking at my profiles on social media.</description>
     </item>
     
+    <item>
+      <title>Xml Identity Transform</title>
+      <link>https://mandolyte.github.io/explorations/posts/xml-identity-transform/</link>
+      <pubDate>Sat, 14 Apr 2018 21:52:09 -0400</pubDate>
+      
+      <guid>https://mandolyte.github.io/explorations/posts/xml-identity-transform/</guid>
+      <description>An identity transformation is one that reproduces the input. The article here, shows examples using XML Stylesheets and XQuery.
+The Go XML package cannot exactly do an identity transform because the standard marshal function does not handle processing instructions or directives.</description>
+    </item>
+    
+    <item>
+      <title>Encoding Xml Unmarshal</title>
+      <link>https://mandolyte.github.io/explorations/posts/encoding-xml-unmarshal/</link>
+      <pubDate>Sat, 14 Apr 2018 21:42:55 -0400</pubDate>
+      
+      <guid>https://mandolyte.github.io/explorations/posts/encoding-xml-unmarshal/</guid>
+      <description>Most examples using Unmarshal show structs that are setup ahead of time to capture specific contents of the XML document. While this is the common use case, a struct can be designed to capture the document in a generic fashion, i.</description>
+    </item>
+    
+    <item>
+      <title>Encoding Xml Decode</title>
+      <link>https://mandolyte.github.io/explorations/posts/encoding-xml-decode/</link>
+      <pubDate>Sat, 14 Apr 2018 21:41:38 -0400</pubDate>
+      
+      <guid>https://mandolyte.github.io/explorations/posts/encoding-xml-decode/</guid>
+      <description>Background I plan to explore a number of Go packages. These will often come with useful samples or utilities. Enjoy!
+All the code for this post is in this repo.</description>
+    </item>
+    
+    <item>
+      <title>Using Chromebook for Go Development</title>
+      <link>https://mandolyte.github.io/explorations/posts/using-chromebook-for-go-development/</link>
+      <pubDate>Sat, 14 Apr 2018 21:40:30 -0400</pubDate>
+      
+      <guid>https://mandolyte.github.io/explorations/posts/using-chromebook-for-go-development/</guid>
+      <description>The process for installing a number of Linux variants is fairly well documented and findable with web searches. I have spent some time playing with this and have settled on an approach that works well for me.</description>
+    </item>
+    
+    <item>
+      <title>Hugo GithubPages Chromebook</title>
+      <link>https://mandolyte.github.io/explorations/posts/hugo-githubpages-chromebook/</link>
+      <pubDate>Sat, 14 Apr 2018 21:40:24 -0400</pubDate>
+      
+      <guid>https://mandolyte.github.io/explorations/posts/hugo-githubpages-chromebook/</guid>
+      <description>I confess that there is little to like about Google&amp;rsquo;s Blogger platform. It certainly has not kept pace with offerings like Wordpress or Medium. I suspect that it would suffice for normal text only blogging, but I have a technical blog and getting code snippets to work well is painful.</description>
+    </item>
+    
   </channel>
 </rss>

@@ -1,0 +1,166 @@
+<!doctype html>
+
+<html lang="en">
+
+<head>
+  <title>Explorations ... Go Packages</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="The HTML5 Herald" />
+  <meta name="author" content="Cecil New" />
+  <meta name="generator" content="Hugo 0.38.2" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Slab|Ruda" />
+  <link rel="stylesheet" type="text/css" href="https://mandolyte.github.io/explorations/css/styles.css" />
+</head>
+
+<body>
+  <div id="container">
+    <header>
+      <h1>
+                <a href="https://mandolyte.github.io/explorations/">Explorations &hellip; Go Packages</a>
+            </h1>
+
+      <ul id="social-media">
+         
+        <li><a href="https://www.linkedin.com/in/cecil-new-06835714/"><i class="fa fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+         
+        <li><a href="https://github.com/mandolyte"><i class="fa fa-github fa-lg" aria-hidden="true"></i></a></li>
+            
+	<li> <a href="https://google.com/+CecilNew"><i class="fa fa-google-plus fa-lg" aria-hidden="true"></i></a></li>
+        
+      </ul>
+      
+      <p><em>&hellip; tender mercies.</em></p>
+      
+    </header>
+
+    
+<nav>
+    <ul>
+        
+        <li>
+            <a class="" href="https://mandolyte.github.io/explorations/about/">
+                <i class="fa-li fa  fa-lg"></i><span>About me</span>
+            </a>
+        </li>
+        
+    </ul>
+</nav>
+
+    <main>
+
+
+
+
+<article>
+
+    <h1>Xml Identity Transform</h1>
+
+    
+        <aside>
+    <ul>
+        <li>
+            <time class="post-date" datetime="2018-04-14T21:52:09-04:00">Apr 14, 2018</time>
+        </li>
+        
+        
+
+        
+
+        <li>2 min read</li>
+    </ul>
+</aside>
+    
+
+    <p>An identity transformation is one that reproduces the input.
+The article <a href="https://en.wikipedia.org/wiki/Identity_transform">here</a>,
+shows examples using XML Stylesheets and XQuery.</p>
+
+<p>The Go XML package cannot exactly do an identity transform
+because the standard marshal function does not handle
+processing instructions or directives.
+And because the marshal function relies on a struct to save the data,
+it cannot keep track of the relative position of comments either.
+However, it will associate the comment to the correct parent element,
+but may move it compared to the input XML document.</p>
+
+<p>In theory, an encoding of decoded XML document would be able to produce
+an exact replica. However, the code below results in an error:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#f92672">package</span> <span style="color:#a6e22e">main</span>
+
+<span style="color:#f92672">import</span> (
+ <span style="color:#e6db74">&#34;encoding/xml&#34;</span>
+ <span style="color:#e6db74">&#34;fmt&#34;</span>
+ <span style="color:#e6db74">&#34;os&#34;</span>
+ <span style="color:#e6db74">&#34;strings&#34;</span>
+)
+
+<span style="color:#66d9ef">func</span> <span style="color:#a6e22e">main</span>() {
+ <span style="color:#a6e22e">data</span> <span style="color:#f92672">:=</span> <span style="color:#e6db74">`
+</span><span style="color:#e6db74"> &lt;Person&gt;
+</span><span style="color:#e6db74">  &lt;FullName&gt;Grace R. Emlin&lt;/FullName&gt;
+</span><span style="color:#e6db74">  &lt;Company&gt;Example Inc.&lt;/Company&gt;
+</span><span style="color:#e6db74"> &lt;/Person&gt;
+</span><span style="color:#e6db74">`</span>
+ <span style="color:#a6e22e">decoder</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">xml</span>.<span style="color:#a6e22e">NewDecoder</span>(<span style="color:#a6e22e">strings</span>.<span style="color:#a6e22e">NewReader</span>(<span style="color:#a6e22e">data</span>))
+ <span style="color:#a6e22e">encoder</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">xml</span>.<span style="color:#a6e22e">NewEncoder</span>(<span style="color:#a6e22e">os</span>.<span style="color:#a6e22e">Stdout</span>)
+ <span style="color:#66d9ef">if</span> <span style="color:#a6e22e">err</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">encoder</span>.<span style="color:#a6e22e">Encode</span>(<span style="color:#a6e22e">decoder</span>); <span style="color:#a6e22e">err</span> <span style="color:#f92672">!=</span> <span style="color:#66d9ef">nil</span> {
+  <span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Printf</span>(<span style="color:#e6db74">&#34;error: %v\n&#34;</span>, <span style="color:#a6e22e">err</span>)
+ }
+}
+<span style="color:#960050;background-color:#1e0010">$</span> <span style="color:#66d9ef">go</span> <span style="color:#a6e22e">run</span> <span style="color:#a6e22e">identityxform</span>.<span style="color:#66d9ef">go</span>
+<span style="color:#66d9ef">error</span>: <span style="color:#a6e22e">xml</span>: <span style="color:#a6e22e">unsupported</span> <span style="color:#66d9ef">type</span>: <span style="color:#66d9ef">map</span>[<span style="color:#66d9ef">string</span>]<span style="color:#66d9ef">string</span>
+<span style="color:#960050;background-color:#1e0010">$</span> </code></pre></div>
+<p>Since that doesn&rsquo;t work, I used the marshal and unmarshal functions
+with the generic tagged struct using in the previous blog article.
+And by using the indent variant of the marshal function,
+the code will pretty print.</p>
+
+<p>Here is an example:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ cat test1.xml 
+&lt;Person type<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;alien&#34;</span> thumbs<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;yes&#34;</span>&gt;here is some character data&lt;FullName&gt;Grace R. Emlin&lt;/FullName&gt;&lt;!-- this is not a comment... just kidding --&gt;&lt;Company&gt;Example Inc.&lt;!-- this company excels --&gt;&lt;/Company&gt;&lt;/Person&gt;
+$ go run identityXform.go -i test1.xml -indent
+&lt;Person type<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;alien&#34;</span> thumbs<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;yes&#34;</span>&gt;here is some character data
+    &lt;!-- this is not a comment... just kidding --&gt;
+    &lt;FullName&gt;Grace R. Emlin&lt;/FullName&gt;
+    &lt;Company&gt;Example Inc.
+        &lt;!-- this company excels --&gt;&lt;/Company&gt;
+&lt;/Person&gt;
+$</code></pre></div>
+<p>Find the code and readme under &ldquo;identityXform&rdquo; <a href="https://github.com/mandolyte/xml-utils">here</a>.</p>
+
+<p>Hope you find this series helpful!</p>
+
+
+</article>
+
+
+<section class="post-nav">
+    <ul>
+        
+        <li>
+            <a href="https://mandolyte.github.io/explorations/posts/encoding-xml-unmarshal/"><i class="fa fa-chevron-circle-left"></i> Encoding Xml Unmarshal</a>
+        </li>
+        
+        
+    </ul>
+</section>
+    
+
+
+
+
+
+</main>
+    <footer>
+        <h6>Copyright &copy; 2018 - Cecil New | 
+            Rendered by <a href="https://gohugo.io" title="Hugo">Hugo</a> |
+            <a href="https://mandolyte.github.io/explorationsindex.xml">Subscribe</a></h6>
+    </footer>
+</div>
+<script src="https://mandolyte.github.io/explorations/js/scripts.js"></script>
+</body>
+
+</html>

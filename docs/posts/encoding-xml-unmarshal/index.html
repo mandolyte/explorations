@@ -1,0 +1,169 @@
+<!doctype html>
+
+<html lang="en">
+
+<head>
+  <title>Explorations ... Go Packages</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="The HTML5 Herald" />
+  <meta name="author" content="Cecil New" />
+  <meta name="generator" content="Hugo 0.38.2" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Slab|Ruda" />
+  <link rel="stylesheet" type="text/css" href="https://mandolyte.github.io/explorations/css/styles.css" />
+</head>
+
+<body>
+  <div id="container">
+    <header>
+      <h1>
+                <a href="https://mandolyte.github.io/explorations/">Explorations &hellip; Go Packages</a>
+            </h1>
+
+      <ul id="social-media">
+         
+        <li><a href="https://www.linkedin.com/in/cecil-new-06835714/"><i class="fa fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+         
+        <li><a href="https://github.com/mandolyte"><i class="fa fa-github fa-lg" aria-hidden="true"></i></a></li>
+            
+	<li> <a href="https://google.com/+CecilNew"><i class="fa fa-google-plus fa-lg" aria-hidden="true"></i></a></li>
+        
+      </ul>
+      
+      <p><em>&hellip; tender mercies.</em></p>
+      
+    </header>
+
+    
+<nav>
+    <ul>
+        
+        <li>
+            <a class="" href="https://mandolyte.github.io/explorations/about/">
+                <i class="fa-li fa  fa-lg"></i><span>About me</span>
+            </a>
+        </li>
+        
+    </ul>
+</nav>
+
+    <main>
+
+
+
+
+<article>
+
+    <h1>Encoding Xml Unmarshal</h1>
+
+    
+        <aside>
+    <ul>
+        <li>
+            <time class="post-date" datetime="2018-04-14T21:42:55-04:00">Apr 14, 2018</time>
+        </li>
+        
+        
+
+        
+
+        <li>2 min read</li>
+    </ul>
+</aside>
+    
+
+    <p>Most examples using Unmarshal show structs that are setup
+ahead of time to capture specific contents of the XML document.
+While this is the common use case, a struct can be designed to
+capture the document in a generic fashion, i.e.,
+a struct that works for any XML document.</p>
+
+<p>There are some limitations since this technique relies on
+XML struct tags to control the unmarshaling.
+The set of tags available do not include
+processing instructions or directives.
+There are also little quirks:</p>
+
+<ul>
+<li>The lexical position and number of comments may change.
+This is because all comments for an element are collected
+into a single one to save into the struct.</li>
+<li>There are no options to control whitespace.
+Thus unless the input XML document is a single line,
+a lot of entities for whitespace will be saved.
+In the sample code I present below, I avoid this by using
+<code>strings.TrimSpace()</code>.</li>
+</ul>
+
+<p>The key for a generic struct is to use some of the built-in types
+and to use slices to reflect one-to-many situations.
+Here is the struct:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#75715e">// note that this struct does not include either
+</span><span style="color:#75715e">// ProcInst or Directive since tags are not
+</span><span style="color:#75715e">// provided for them (probably for reasonable cause)
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">type</span> <span style="color:#a6e22e">xmlany</span> <span style="color:#66d9ef">struct</span> {
+    <span style="color:#a6e22e">XMLName</span> <span style="color:#a6e22e">xml</span>.<span style="color:#a6e22e">Name</span>
+    <span style="color:#a6e22e">Attrs</span>   []<span style="color:#a6e22e">xml</span>.<span style="color:#a6e22e">Attr</span> <span style="color:#e6db74">`xml:&#34;,any,attr&#34;`</span>
+    <span style="color:#a6e22e">Content</span> <span style="color:#66d9ef">string</span>     <span style="color:#e6db74">`xml:&#34;,chardata&#34;`</span>
+    <span style="color:#a6e22e">Comment</span> <span style="color:#66d9ef">string</span>     <span style="color:#e6db74">`xml:&#34;,comment&#34;`</span>
+    <span style="color:#a6e22e">Nested</span>  []<span style="color:#f92672">*</span><span style="color:#a6e22e">xmlany</span>  <span style="color:#e6db74">`xml:&#34;,any&#34;`</span>
+}</code></pre></div>
+<p>The &ldquo;Nested&rdquo; slice will contain pointers to
+all child elements of the parent.</p>
+
+<p>As with parseAny.go this example code isn&rsquo;t so useful in its own right,
+but mostly serves to illustrate the technique so you can use it for your own use cases.</p>
+
+
+<figure class="float">
+    
+        <img src="https://mandolyte.github.io/explorations/images/xml-generic-unmarshal.png" width="100" />
+    
+    
+    <figcaption>
+        <h4>XML-to-CSV Snippet</h4>
+        
+    </figcaption>
+    
+</figure>
+
+
+<p>This example is <a href="https://github.com/mandolyte/xml-utils">here</a>.</p>
+
+
+</article>
+
+
+<section class="post-nav">
+    <ul>
+        
+        <li>
+            <a href="https://mandolyte.github.io/explorations/posts/encoding-xml-decode/"><i class="fa fa-chevron-circle-left"></i> Encoding Xml Decode</a>
+        </li>
+        
+        
+        <li>
+            <a href="https://mandolyte.github.io/explorations/posts/xml-identity-transform/">Xml Identity Transform <i class="fa fa-chevron-circle-right"></i> </a>
+        </li>
+        
+    </ul>
+</section>
+    
+
+
+
+
+
+</main>
+    <footer>
+        <h6>Copyright &copy; 2018 - Cecil New | 
+            Rendered by <a href="https://gohugo.io" title="Hugo">Hugo</a> |
+            <a href="https://mandolyte.github.io/explorationsindex.xml">Subscribe</a></h6>
+    </footer>
+</div>
+<script src="https://mandolyte.github.io/explorations/js/scripts.js"></script>
+</body>
+
+</html>

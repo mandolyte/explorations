@@ -1,0 +1,188 @@
+<!doctype html>
+
+<html lang="en">
+
+<head>
+  <title>Explorations ... Go Packages</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="The HTML5 Herald" />
+  <meta name="author" content="Cecil New" />
+  <meta name="generator" content="Hugo 0.38.2" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Slab|Ruda" />
+  <link rel="stylesheet" type="text/css" href="https://mandolyte.github.io/explorations/css/styles.css" />
+</head>
+
+<body>
+  <div id="container">
+    <header>
+      <h1>
+                <a href="https://mandolyte.github.io/explorations/">Explorations &hellip; Go Packages</a>
+            </h1>
+
+      <ul id="social-media">
+         
+        <li><a href="https://www.linkedin.com/in/cecil-new-06835714/"><i class="fa fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+         
+        <li><a href="https://github.com/mandolyte"><i class="fa fa-github fa-lg" aria-hidden="true"></i></a></li>
+            
+	<li> <a href="https://google.com/+CecilNew"><i class="fa fa-google-plus fa-lg" aria-hidden="true"></i></a></li>
+        
+      </ul>
+      
+      <p><em>&hellip; tender mercies.</em></p>
+      
+    </header>
+
+    
+<nav>
+    <ul>
+        
+        <li>
+            <a class="" href="https://mandolyte.github.io/explorations/about/">
+                <i class="fa-li fa  fa-lg"></i><span>About me</span>
+            </a>
+        </li>
+        
+    </ul>
+</nav>
+
+    <main>
+
+
+
+
+<article>
+
+    <h1>Hugo GithubPages Chromebook</h1>
+
+    
+        <aside>
+    <ul>
+        <li>
+            <time class="post-date" datetime="2018-04-14T21:40:24-04:00">Apr 14, 2018</time>
+        </li>
+        
+        
+
+        
+
+        <li>3 min read</li>
+    </ul>
+</aside>
+    
+
+    <p>I confess that there is little to like about Google&rsquo;s Blogger platform.
+It certainly has not kept pace with offerings like Wordpress or Medium.
+I suspect that it would suffice for normal text only blogging, but
+I have a technical blog and getting code snippets to work well is painful.</p>
+
+<p>So when I learned recently that Github Pages supported Jekyll I
+immediately did a search to see if Hugo supported Github Pages.
+To my delight it did. Furthermore, since blogging is often a
+&ldquo;sofa&rdquo; activity, I decided to try to use my Chromebook from the start.
+I have a Samsung Chromebook Plus, which uses an ARM chip and often
+means a little more work. I have crouton installed using the target
+&ldquo;cli-extra&rdquo;, which means no GUI&hellip; just Vim and me (1).</p>
+
+<p>First I tried to just use apt-get to install Hugo, but that version
+is over two years old and couldn&rsquo;t even do the quickstart tutorial (2).
+So I used the tarball instructions to install
+<code>hugo_0.38.2_Linux-ARM64.tar.gz</code>.
+I installed as directed into <code>$HOME/bin</code> and ensured that it was
+on my path. Transcript:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ tar -xvzf ~/Downloads/hugo_0.38.2_Linux-ARM64.tar.gz 
+README.md
+LICENSE.md
+hugo
+$ ./hugo version
+Hugo Static Site Generator v0.38.2 linux/arm64 BuildDate: <span style="color:#ae81ff">2018</span>-04-09T08:17:45Z
+$ which hugo
+/home/cecil/bin/hugo</code></pre></div>
+<p>I found out quickly that when I started the hugo web server
+to view my content, I was able to simply switch tabs and go to
+<code>localhost:1313</code> to view&hellip; and it worked perfectly.
+If unable view the content, then using my Chromebook
+was pretty much a non-starter.</p>
+
+<p>There are several ways to setup Hugo to work with Github Pages (3).
+Since I wanted to be able to have multiple blogs, I settled on
+the &ldquo;project&rdquo; based approach.</p>
+
+<p>By far the hardest part of using Hugo is picking a theme (4).
+There is a wide variety of themes, which is a good thing.
+But the themes have little consistency and support a bewildering
+set of parameters and features, which makes it hard.
+I soon learned to look at the list of configuration parameters
+in the theme documentation to evaluate whether a theme had what I wanted.</p>
+
+<p>I finally settled on the Kiera theme
+(as a fan of Vlad, how could I resist??).
+It is simple, clean, and rendered my test post very well,
+which included code blocks, backticked phrases, bullets, images, links,  etc.
+However, it did not support Google Plus as a social network option,
+which I wanted.
+So I had to research a bit and ended up forking the theme
+and doing a pull request to add it.</p>
+
+<p>In the hours I played with different themes,
+I finally got into a rhythm on evaluating them:</p>
+
+<ul>
+<li>Create a new directory for the theme
+(if tried to keep multiple themes in one project, the configuration
+parameters seemed to interfere, so I kept them cleanly separated)</li>
+<li>Copy over content, static folders</li>
+<li>Use the theme&rsquo;s <code>config.toml</code> file as a starting point and update it to suit</li>
+<li>Finally start the server and test it: <code>hugo server -D</code></li>
+</ul>
+
+<p>Since these are static web pages, there is no built-in commenting system.
+Disqus is available, but has mixed reviews. So I simply suggest that
+if you want to comment, contact me over on LinkedIn or Google+ (see top
+of each post)&hellip; or file an issue in Github! :-)</p>
+
+<p>My first set of posts will be ones ported over from Blogger.</p>
+
+<p><em>References</em></p>
+
+<ol>
+<li><a href="http://www.mandolyte.info/2018/02/using-chromebook-for-go-development.html">http://www.mandolyte.info/2018/02/using-chromebook-for-go-development.html</a></li>
+<li><a href="https://gohugo.io/getting-started/quick-start/">https://gohugo.io/getting-started/quick-start/</a></li>
+<li><a href="https://gohugo.io/hosting-and-deployment/hosting-on-github/">https://gohugo.io/hosting-and-deployment/hosting-on-github/</a></li>
+<li><a href="https://themes.gohugo.io/">https://themes.gohugo.io/</a></li>
+</ol>
+
+
+</article>
+
+
+<section class="post-nav">
+    <ul>
+        
+        
+        <li>
+            <a href="https://mandolyte.github.io/explorations/posts/using-chromebook-for-go-development/">Using Chromebook for Go Development <i class="fa fa-chevron-circle-right"></i> </a>
+        </li>
+        
+    </ul>
+</section>
+    
+
+
+
+
+
+</main>
+    <footer>
+        <h6>Copyright &copy; 2018 - Cecil New | 
+            Rendered by <a href="https://gohugo.io" title="Hugo">Hugo</a> |
+            <a href="https://mandolyte.github.io/explorationsindex.xml">Subscribe</a></h6>
+    </footer>
+</div>
+<script src="https://mandolyte.github.io/explorations/js/scripts.js"></script>
+</body>
+
+</html>
