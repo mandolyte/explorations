@@ -1,7 +1,7 @@
 +++
 title = "Hugo GithubPages Chromebook"
 date = 2018-04-14T21:40:24-04:00
-draft = true
+draft = false
 tags = []
 categories = []
 +++

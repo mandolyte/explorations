@@ -1,7 +1,7 @@
 +++
 title = "Xml Identity Transform"
 date = 2018-04-14T21:52:09-04:00
-draft = true
+draft = false
 tags = []
 categories = []
 +++
