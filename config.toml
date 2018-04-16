@@ -1,4 +1,4 @@
-baseurl = "https://mandolyte.github.io/explorations"
+baseurl = "https://mandolyte.github.io/explorations/"
 title = "Explorations ... Go Packages"
 copyright = "Copyright &copy; 2018 - Cecil New"
 canonifyurls = true
