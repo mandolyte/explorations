@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Go on Explorations ... Go Packages</title>
+    <link>https://mandolyte.github.io/explorations/tags/go/</link>
+    <description>Recent content in Go on Explorations ... Go Packages</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <copyright>Copyright &amp;copy; 2018 - Cecil New</copyright>
+    <lastBuildDate>Sat, 14 Apr 2018 21:40:30 -0400</lastBuildDate>
+    
+	<atom:link href="https://mandolyte.github.io/explorations/tags/go/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Using Chromebook for Go Development</title>
+      <link>https://mandolyte.github.io/explorations/posts/using-chromebook-for-go-development/</link>
+      <pubDate>Sat, 14 Apr 2018 21:40:30 -0400</pubDate>
+      
+      <guid>https://mandolyte.github.io/explorations/posts/using-chromebook-for-go-development/</guid>
+      <description>The process for installing a number of Linux variants is fairly well documented and findable with web searches. I have spent some time playing with this and have settled on an approach that works well for me.</description>
+    </item>
+    
+  </channel>
+</rss>

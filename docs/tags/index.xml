@@ -6,9 +6,55 @@
     <description>Recent content in Tags on Explorations ... Go Packages</description>
     <generator>Hugo -- gohugo.io</generator>
     <copyright>Copyright &amp;copy; 2018 - Cecil New</copyright>
+    <lastBuildDate>Sat, 14 Apr 2018 21:40:30 -0400</lastBuildDate>
     
 	<atom:link href="https://mandolyte.github.io/explorations/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Chromebook</title>
+      <link>https://mandolyte.github.io/explorations/tags/chromebook/</link>
+      <pubDate>Sat, 14 Apr 2018 21:40:30 -0400</pubDate>
+      
+      <guid>https://mandolyte.github.io/explorations/tags/chromebook/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Github</title>
+      <link>https://mandolyte.github.io/explorations/tags/github/</link>
+      <pubDate>Sat, 14 Apr 2018 21:40:24 -0400</pubDate>
+      
+      <guid>https://mandolyte.github.io/explorations/tags/github/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Go</title>
+      <link>https://mandolyte.github.io/explorations/tags/go/</link>
+      <pubDate>Sat, 14 Apr 2018 21:40:30 -0400</pubDate>
+      
+      <guid>https://mandolyte.github.io/explorations/tags/go/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Hugo</title>
+      <link>https://mandolyte.github.io/explorations/tags/hugo/</link>
+      <pubDate>Sat, 14 Apr 2018 21:40:24 -0400</pubDate>
+      
+      <guid>https://mandolyte.github.io/explorations/tags/hugo/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Xml</title>
+      <link>https://mandolyte.github.io/explorations/tags/xml/</link>
+      <pubDate>Sat, 14 Apr 2018 21:52:09 -0400</pubDate>
+      
+      <guid>https://mandolyte.github.io/explorations/tags/xml/</guid>
+      <description></description>
+    </item>
     
   </channel>
 </rss>

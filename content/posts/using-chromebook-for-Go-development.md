@@ -2,7 +2,7 @@
 title = "Using Chromebook for Go Development"
 date = 2018-04-14T21:40:30-04:00
 draft = false
-tags = []
+tags = ["chromebook", "go"]
 categories = []
 +++
 

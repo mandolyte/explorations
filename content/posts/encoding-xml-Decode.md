@@ -2,7 +2,7 @@
 title = "Encoding Xml Decode"
 date = 2018-04-14T21:41:38-04:00
 draft = false
-tags = []
+tags = ["xml"]
 categories = []
 +++
 

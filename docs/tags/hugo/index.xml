@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Hugo on Explorations ... Go Packages</title>
+    <link>https://mandolyte.github.io/explorations/tags/hugo/</link>
+    <description>Recent content in Hugo on Explorations ... Go Packages</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <copyright>Copyright &amp;copy; 2018 - Cecil New</copyright>
+    <lastBuildDate>Sat, 14 Apr 2018 21:40:24 -0400</lastBuildDate>
+    
+	<atom:link href="https://mandolyte.github.io/explorations/tags/hugo/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Hugo GithubPages Chromebook</title>
+      <link>https://mandolyte.github.io/explorations/posts/hugo-githubpages-chromebook/</link>
+      <pubDate>Sat, 14 Apr 2018 21:40:24 -0400</pubDate>
+      
+      <guid>https://mandolyte.github.io/explorations/posts/hugo-githubpages-chromebook/</guid>
+      <description>I confess that there is little to like about Google&amp;rsquo;s Blogger platform. It certainly has not kept pace with offerings like Wordpress or Medium. I suspect that it would suffice for normal text only blogging, but I have a technical blog and getting code snippets to work well is painful.</description>
+    </item>
+    
+  </channel>
+</rss>

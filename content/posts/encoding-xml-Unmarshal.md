@@ -2,7 +2,7 @@
 title = "Encoding Xml Unmarshal"
 date = 2018-04-14T21:42:55-04:00
 draft = false
-tags = []
+tags = ["xml"]
 categories = []
 +++
 

@@ -3,8 +3,23 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://mandolyte.github.io/explorations/posts/</loc>
+    <lastmod>2018-04-14T21:52:09-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://mandolyte.github.io/explorations/feedback/</loc>
+    <lastmod>2014-04-16T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://mandolyte.github.io/explorations/about/</loc>
     <lastmod>2014-04-09T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://mandolyte.github.io/explorations/taxonomy/</loc>
+    <lastmod>2014-04-16T00:00:00+00:00</lastmod>
   </url>
   
   <url>
@@ -38,19 +53,44 @@
   </url>
   
   <url>
-    <loc>https://mandolyte.github.io/explorations/</loc>
-    <lastmod>2014-04-09T00:00:00+00:00</lastmod>
+    <loc>https://mandolyte.github.io/explorations/tags/chromebook/</loc>
+    <lastmod>2018-04-14T21:40:30-04:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://mandolyte.github.io/explorations/posts/</loc>
-    <lastmod>2018-04-14T21:52:09-04:00</lastmod>
+    <loc>https://mandolyte.github.io/explorations/</loc>
+    <lastmod>2014-04-16T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://mandolyte.github.io/explorations/tags/github/</loc>
+    <lastmod>2018-04-14T21:40:24-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://mandolyte.github.io/explorations/tags/go/</loc>
+    <lastmod>2018-04-14T21:40:30-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://mandolyte.github.io/explorations/tags/hugo/</loc>
+    <lastmod>2018-04-14T21:40:24-04:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://mandolyte.github.io/explorations/tags/</loc>
+    <lastmod>2018-04-14T21:40:30-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://mandolyte.github.io/explorations/tags/xml/</loc>
+    <lastmod>2018-04-14T21:52:09-04:00</lastmod>
     <priority>0</priority>
   </url>
   
