@@ -42,6 +42,24 @@ You can find out more by peeking at my profiles on social media.</description>
     </item>
     
     <item>
+      <title>Using querydb in db-utils</title>
+      <link>https://mandolyte.github.io/explorations/posts/using-querydb-in-db-utils/</link>
+      <pubDate>Fri, 20 Apr 2018 10:44:45 -0400</pubDate>
+      
+      <guid>https://mandolyte.github.io/explorations/posts/using-querydb-in-db-utils/</guid>
+      <description>The purpose of &amp;ldquo;querydb&amp;rdquo; is to easily execute an SQL SELECT statement at the command line or in a script. As with &amp;ldquo;modifydb&amp;rdquo;, in order to be generic, you may need to update the source to include the appropriate driver.</description>
+    </item>
+    
+    <item>
+      <title>Using modifydb in db-utils</title>
+      <link>https://mandolyte.github.io/explorations/posts/using-modifydb-in-db-utils/</link>
+      <pubDate>Fri, 20 Apr 2018 10:32:35 -0400</pubDate>
+      
+      <guid>https://mandolyte.github.io/explorations/posts/using-modifydb-in-db-utils/</guid>
+      <description>The purpose of &amp;ldquo;modifydb&amp;rdquo; is to easily execute an SQL statement that updates a database. In order to be generic, you may need to update the source to include the appropriate driver.</description>
+    </item>
+    
+    <item>
       <title>Using pgcopy in db-utils</title>
       <link>https://mandolyte.github.io/explorations/posts/using-pgcopy-in-db-utils/</link>
       <pubDate>Fri, 20 Apr 2018 10:17:04 -0400</pubDate>

@@ -1,0 +1,241 @@
+<!doctype html>
+
+<html lang="en">
+
+<head>
+  <title>Explorations ... Go Packages</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="The HTML5 Herald" />
+  <meta name="author" content="Cecil New" />
+  <meta name="generator" content="Hugo 0.38.2" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Slab|Ruda" />
+  <link rel="stylesheet" type="text/css" href="https://mandolyte.github.io/explorations/css/styles.css" />
+</head>
+
+<body>
+  <div id="container">
+    <header>
+      <h1>
+                <a href="https://mandolyte.github.io/explorations/">Explorations &hellip; Go Packages</a>
+            </h1>
+
+      <ul id="social-media">
+         
+        <li><a href="https://www.linkedin.com/in/cecil-new-06835714/"><i class="fa fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+         
+        <li><a href="https://github.com/mandolyte"><i class="fa fa-github fa-lg" aria-hidden="true"></i></a></li>
+            
+	<li> <a href="https://google.com/+CecilNew"><i class="fa fa-google-plus fa-lg" aria-hidden="true"></i></a></li>
+        
+      </ul>
+      
+      <p><em>&hellip; tender mercies.</em></p>
+      
+    </header>
+
+    
+<nav>
+    <ul>
+        
+        <li>
+            <a class="" href="https://mandolyte.github.io/explorations/posts/">
+                <i class="fa-li fa  fa-lg"></i><span>Posts</span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="" href="https://mandolyte.github.io/explorations/tags/">
+                <i class="fa-li fa  fa-lg"></i><span>Tags</span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="" href="https://mandolyte.github.io/explorations/feedback/">
+                <i class="fa-li fa  fa-lg"></i><span>Feedback</span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="" href="https://mandolyte.github.io/explorations/about/">
+                <i class="fa-li fa  fa-lg"></i><span>About me</span>
+            </a>
+        </li>
+        
+    </ul>
+</nav>
+
+    <main>
+
+
+
+
+<article>
+
+    <h1>Using modifydb in db-utils</h1>
+
+    
+        <aside>
+    <ul>
+        <li>
+            <time class="post-date" datetime="2018-04-20T10:32:35-04:00">Apr 20, 2018</time>
+        </li>
+        
+        
+
+        
+        <li>
+            <em>
+                
+                    
+                    <a href="https://mandolyte.github.io/explorations/tags/databases/">#databases</a>
+                
+                    , 
+                    <a href="https://mandolyte.github.io/explorations/tags/go/">#go</a>
+                
+                    , 
+                    <a href="https://mandolyte.github.io/explorations/tags/sql/">#sql</a>
+                
+            </em>
+        </li>
+        
+
+        <li>3 min read</li>
+    </ul>
+</aside>
+    
+
+    <p>The purpose of &ldquo;modifydb&rdquo; is to easily execute
+an SQL statement that updates a database.
+In order to be generic, you may need to update
+the source to include the appropriate driver.
+As written, it includes two drivers which may
+be selected via the &ldquo;-driver&rdquo; argument.</p>
+
+<p>Here is a snippet from the source showing the inclusion of two drivers:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#f92672">import</span> (
+ <span style="color:#e6db74">&#34;database/sql&#34;</span>
+ <span style="color:#f92672">...</span>
+
+ <span style="color:#e6db74">&#34;github.com/mandolyte/db-utils&#34;</span>
+
+ <span style="color:#a6e22e">_</span> <span style="color:#e6db74">&#34;github.com/cznic/sqlite&#34;</span>
+ <span style="color:#a6e22e">_</span> <span style="color:#e6db74">&#34;github.com/lib/pq&#34;</span>
+)</code></pre></div>
+<p>The first one is a native Go driver for SQLite
+and is still a work in progress. At this writing,
+it works fine for Linux (AMD architectures) and
+the Windows Linux Subsystem, but isn&rsquo;t quite ready yet on Windows.</p>
+
+<p>The second one is the standard Postgres driver.</p>
+
+<p>To see the help, use the &ldquo;-help&rdquo; argument as shown below.
+Notice that the driver name is required, such as &ldquo;postgres&rdquo; or &ldquo;sqlite&rdquo;.
+Also required is the name of an environment variable
+containing the connect string.</p>
+
+<p>The connect string format varies from driver to driver. Examples are shown later.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#960050;background-color:#1e0010">$</span> <span style="color:#a6e22e">modifydb</span> <span style="color:#f92672">-</span><span style="color:#a6e22e">help</span>
+<span style="color:#a6e22e">Help</span>:
+<span style="color:#a6e22e">Usage</span>:
+  <span style="color:#f92672">-</span><span style="color:#a6e22e">debug</span>
+        <span style="color:#a6e22e">Show</span> <span style="color:#a6e22e">debug</span> <span style="color:#a6e22e">messages</span> (<span style="color:#66d9ef">default</span> <span style="color:#66d9ef">true</span>)
+  <span style="color:#f92672">-</span><span style="color:#a6e22e">driver</span> <span style="color:#66d9ef">string</span>
+        <span style="color:#a6e22e">Driver</span> <span style="color:#a6e22e">name</span>; <span style="color:#a6e22e">required</span>
+  <span style="color:#f92672">-</span><span style="color:#a6e22e">help</span>
+        <span style="color:#a6e22e">Show</span> <span style="color:#a6e22e">help</span> <span style="color:#a6e22e">message</span>
+  <span style="color:#f92672">-</span><span style="color:#a6e22e">input</span> <span style="color:#66d9ef">string</span>
+        <span style="color:#a6e22e">Optional</span> <span style="color:#a6e22e">input</span> <span style="color:#a6e22e">CSV</span> <span style="color:#a6e22e">supplying</span> <span style="color:#a6e22e">parameters</span> <span style="color:#a6e22e">to</span> <span style="color:#a6e22e">SQL</span> <span style="color:#a6e22e">query</span>
+  <span style="color:#f92672">-</span><span style="color:#a6e22e">parameters</span> <span style="color:#66d9ef">string</span>
+        <span style="color:#a6e22e">Comma</span> <span style="color:#a6e22e">delimited</span> <span style="color:#a6e22e">list</span> <span style="color:#a6e22e">of</span> <span style="color:#a6e22e">column</span> <span style="color:#a6e22e">numbers</span> <span style="color:#a6e22e">of</span> <span style="color:#a6e22e">input</span> <span style="color:#a6e22e">CSV</span> <span style="color:#a6e22e">in</span> <span style="color:#a6e22e">order</span> <span style="color:#a6e22e">needed</span>;
+<span style="color:#a6e22e">first</span> <span style="color:#a6e22e">is</span> <span style="color:#ae81ff">1</span>, <span style="color:#a6e22e">not</span> <span style="color:#a6e22e">zero</span>
+  <span style="color:#f92672">-</span><span style="color:#a6e22e">query</span> <span style="color:#66d9ef">string</span>
+        <span style="color:#a6e22e">SQL</span> <span style="color:#a6e22e">statement</span> <span style="color:#a6e22e">filename</span>
+  <span style="color:#f92672">-</span><span style="color:#a6e22e">urlref</span> <span style="color:#66d9ef">string</span>
+        <span style="color:#a6e22e">Environment</span> <span style="color:#a6e22e">variable</span> <span style="color:#a6e22e">with</span> <span style="color:#a6e22e">DB</span> <span style="color:#a6e22e">URL</span>
+
+<span style="color:#a6e22e">Notes</span>:
+<span style="color:#ae81ff">1.</span> <span style="color:#a6e22e">If</span> <span style="color:#a6e22e">the</span> <span style="color:#a6e22e">optional</span> <span style="color:#a6e22e">input</span> <span style="color:#a6e22e">CSV</span> <span style="color:#a6e22e">is</span> <span style="color:#a6e22e">supplied</span>, <span style="color:#a6e22e">then</span> <span style="color:#a6e22e">the</span> <span style="color:#a6e22e">rows</span> <span style="color:#a6e22e">will</span> <span style="color:#a6e22e">be</span> <span style="color:#a6e22e">used</span> <span style="color:#a6e22e">to</span> <span style="color:#a6e22e">supply</span>
+<span style="color:#a6e22e">parameter</span> <span style="color:#a6e22e">values</span> <span style="color:#a6e22e">to</span> <span style="color:#a6e22e">the</span> <span style="color:#a6e22e">SQL</span> <span style="color:#a6e22e">statement</span>. 
+<span style="color:#ae81ff">2.</span> <span style="color:#a6e22e">The</span> <span style="color:#a6e22e">input</span> <span style="color:#a6e22e">CSV</span> <span style="color:#a6e22e">must</span> <span style="color:#a6e22e">be</span> <span style="color:#a6e22e">accompanied</span> <span style="color:#a6e22e">by</span> <span style="color:#a6e22e">a</span> <span style="color:#a6e22e">list</span> <span style="color:#a6e22e">of</span> <span style="color:#a6e22e">column</span> <span style="color:#a6e22e">numbers</span> <span style="color:#a6e22e">in</span> <span style="color:#a6e22e">the</span> <span style="color:#a6e22e">order</span>
+<span style="color:#a6e22e">needed</span> <span style="color:#a6e22e">to</span> <span style="color:#a6e22e">correctly</span> <span style="color:#a6e22e">drive</span> <span style="color:#a6e22e">the</span> <span style="color:#a6e22e">SQL</span> <span style="color:#a6e22e">parameter</span> <span style="color:#a6e22e">substitution</span>. 
+        <span style="color:#a6e22e">For</span> <span style="color:#a6e22e">example</span>, <span style="color:#66d9ef">if</span> <span style="color:#a6e22e">the</span> <span style="color:#a6e22e">WHERE</span> <span style="color:#a6e22e">clause</span> <span style="color:#a6e22e">is</span>:
+                <span style="color:#a6e22e">WHERE</span> <span style="color:#a6e22e">x</span> = <span style="color:#960050;background-color:#1e0010">?</span> <span style="color:#a6e22e">and</span> (<span style="color:#a6e22e">y</span> = <span style="color:#960050;background-color:#1e0010">?</span> <span style="color:#a6e22e">or</span> <span style="color:#a6e22e">z</span> = <span style="color:#960050;background-color:#1e0010">?</span>)
+        <span style="color:#a6e22e">and</span> <span style="color:#a6e22e">the</span> <span style="color:#a6e22e">values</span> <span style="color:#a6e22e">in</span> <span style="color:#a6e22e">the</span> <span style="color:#a6e22e">CSV</span> <span style="color:#66d9ef">for</span> <span style="color:#a6e22e">x</span>, <span style="color:#a6e22e">y</span>, <span style="color:#a6e22e">and</span> <span style="color:#a6e22e">z</span> <span style="color:#a6e22e">are</span> <span style="color:#a6e22e">found</span> <span style="color:#a6e22e">in</span> <span style="color:#a6e22e">columns</span> 
+        <span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">12</span>, <span style="color:#a6e22e">and</span> <span style="color:#ae81ff">3</span>, <span style="color:#a6e22e">then</span> <span style="color:#a6e22e">the</span> <span style="color:#a6e22e">parameters</span> <span style="color:#a6e22e">argument</span> <span style="color:#a6e22e">will</span> <span style="color:#a6e22e">look</span> <span style="color:#a6e22e">like</span> <span style="color:#a6e22e">this</span>:
+                <span style="color:#f92672">-</span><span style="color:#a6e22e">parameters</span> <span style="color:#ae81ff">2</span>,<span style="color:#ae81ff">12</span>,<span style="color:#ae81ff">3</span>
+<span style="color:#ae81ff">3.</span> <span style="color:#a6e22e">The</span> <span style="color:#a6e22e">SQL</span> <span style="color:#a6e22e">statement</span> <span style="color:#a6e22e">will</span> <span style="color:#a6e22e">be</span> <span style="color:#a6e22e">executed</span> <span style="color:#a6e22e">one</span> <span style="color:#a6e22e">time</span> <span style="color:#66d9ef">for</span> <span style="color:#a6e22e">each</span> <span style="color:#a6e22e">row</span> <span style="color:#a6e22e">in</span> <span style="color:#a6e22e">the</span> <span style="color:#a6e22e">CSV</span>.
+<span style="color:#ae81ff">4.</span> <span style="color:#a6e22e">The</span> <span style="color:#a6e22e">list</span> <span style="color:#a6e22e">of</span> <span style="color:#a6e22e">parameters</span> <span style="color:#a6e22e">is</span> <span style="color:#a6e22e">one</span><span style="color:#f92672">-</span><span style="color:#a6e22e">based</span> <span style="color:#a6e22e">like</span> <span style="color:#a6e22e">SQL</span>, <span style="color:#a6e22e">not</span> <span style="color:#a6e22e">zero</span> <span style="color:#a6e22e">based</span>. 
+<span style="color:#a6e22e">So</span> <span style="color:#a6e22e">first</span> <span style="color:#a6e22e">column</span> <span style="color:#a6e22e">is</span> <span style="color:#a6e22e">one</span>, <span style="color:#a6e22e">not</span> <span style="color:#a6e22e">zero</span></code></pre></div>
+<p>Optionally, a CSV input file may be provided to be used for
+substitution parameters.
+Which ones to use are specified by the &ldquo;-parameters&rdquo; argument.
+The notes in the help message have a bit more explanation.</p>
+
+<p>Let&rsquo;s say you want to create a table in the database, using:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">CREATE</span> <span style="color:#66d9ef">TABLE</span> edge (
+    id text <span style="color:#66d9ef">key</span>,
+    from_id text <span style="color:#66d9ef">not</span> <span style="color:#66d9ef">null</span>,
+    to_id text <span style="color:#66d9ef">not</span> <span style="color:#66d9ef">null</span>
+)</code></pre></div>
+<p>Then a script to do this for SQLite might look like this:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">DB<span style="color:#f92672">=</span>here.db
+DN<span style="color:#f92672">=</span>sqlite
+export DB DN
+modifydb -query edge_create.sql -urlref DB -driver $DN</code></pre></div>
+<p>In the next example, suppose you have a CSV file
+that you want to insert into the table above.
+The SQL would look this:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">insert</span> <span style="color:#66d9ef">into</span> edge (id,from_id, to_id)
+<span style="color:#66d9ef">values</span> (<span style="color:#f92672">?</span>, <span style="color:#f92672">?</span>, <span style="color:#f92672">?</span>)</code></pre></div>
+<p>Let&rsquo;s say that the input CSV columns to use are the first three,
+in the same order needed by the insert statement.
+Then the command might look like this:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">modifydb -query edge_insert.sql <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>    -input $HOME/data/hier/hier_edges.csv <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>    -parameters <span style="color:#ae81ff">1</span>,2,3 <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>    -urlref DB -driver $DN</code></pre></div>
+<p>where the SQL filename is <code>edge_insert.sql</code>;
+the CSV filename is specified on the <code>-input</code> argument;
+and the columns to use as substitution parameters
+are supplied on the <code>-parameters</code> argument.</p>
+
+<p>Hope you find this useful!</p>
+
+
+</article>
+
+
+<section class="post-nav">
+    <ul>
+        
+        <li>
+            <a href="https://mandolyte.github.io/explorations/posts/using-pgcopy-in-db-utils/"><i class="fa fa-chevron-circle-left"></i> Using pgcopy in db-utils</a>
+        </li>
+        
+        
+        <li>
+            <a href="https://mandolyte.github.io/explorations/posts/using-querydb-in-db-utils/">Using querydb in db-utils <i class="fa fa-chevron-circle-right"></i> </a>
+        </li>
+        
+    </ul>
+</section>
+    
+
+
+
+
+
+</main>
+    <footer>
+        <h6>Copyright &copy; 2018 - Cecil New | 
+            Rendered by <a href="https://gohugo.io" title="Hugo">Hugo</a> |
+            <a href="https://mandolyte.github.io/explorations/index.xml">Subscribe</a></h6>
+    </footer>
+</div>
+<script src="https://mandolyte.github.io/explorations/js/scripts.js"></script>
+</body>
+
+</html>
