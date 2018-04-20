@@ -1,0 +1,178 @@
+<!doctype html>
+
+<html lang="en">
+
+<head>
+  <title>Explorations ... Go Packages</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="The HTML5 Herald" />
+  <meta name="author" content="Cecil New" />
+  <meta name="generator" content="Hugo 0.38.2" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Slab|Ruda" />
+  <link rel="stylesheet" type="text/css" href="https://mandolyte.github.io/explorations/css/styles.css" />
+</head>
+
+<body>
+  <div id="container">
+    <header>
+      <h1>
+                <a href="https://mandolyte.github.io/explorations/">Explorations &hellip; Go Packages</a>
+            </h1>
+
+      <ul id="social-media">
+         
+        <li><a href="https://www.linkedin.com/in/cecil-new-06835714/"><i class="fa fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+         
+        <li><a href="https://github.com/mandolyte"><i class="fa fa-github fa-lg" aria-hidden="true"></i></a></li>
+            
+	<li> <a href="https://google.com/+CecilNew"><i class="fa fa-google-plus fa-lg" aria-hidden="true"></i></a></li>
+        
+      </ul>
+      
+      <p><em>&hellip; tender mercies.</em></p>
+      
+    </header>
+
+    
+<nav>
+    <ul>
+        
+        <li>
+            <a class="" href="https://mandolyte.github.io/explorations/posts/">
+                <i class="fa-li fa  fa-lg"></i><span>Posts</span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="" href="https://mandolyte.github.io/explorations/tags/">
+                <i class="fa-li fa  fa-lg"></i><span>Tags</span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="" href="https://mandolyte.github.io/explorations/feedback/">
+                <i class="fa-li fa  fa-lg"></i><span>Feedback</span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="" href="https://mandolyte.github.io/explorations/about/">
+                <i class="fa-li fa  fa-lg"></i><span>About me</span>
+            </a>
+        </li>
+        
+    </ul>
+</nav>
+
+    <main>
+
+
+
+
+<article>
+
+    <h1>Using pgcopy in db-utils</h1>
+
+    
+        <aside>
+    <ul>
+        <li>
+            <time class="post-date" datetime="2018-04-20T10:17:04-04:00">Apr 20, 2018</time>
+        </li>
+        
+        
+
+        
+        <li>
+            <em>
+                
+                    
+                    <a href="https://mandolyte.github.io/explorations/tags/databases/">#databases</a>
+                
+                    , 
+                    <a href="https://mandolyte.github.io/explorations/tags/go/">#go</a>
+                
+                    , 
+                    <a href="https://mandolyte.github.io/explorations/tags/postgres/">#postgres</a>
+                
+            </em>
+        </li>
+        
+
+        <li>1 min read</li>
+    </ul>
+</aside>
+    
+
+    <p>The &ldquo;pgcopy&rdquo; utility will import a CSV file using the
+&ldquo;lib/pq&rdquo; copy-in-schema function.
+It is one of the fastest ways to import into a Postgres database.</p>
+
+<p>Using the &ldquo;-help&rdquo; options shows:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ pgcopy -help
+Help:
+  -help
+        Show help message
+  -input string
+        Input CSV to COPY from
+  -schema string
+        Schema with table to COPY to
+  -table string
+        Table name to COPY to
+  -urlvar string
+        Environment variable with DB URL
+The input CSV file must have headers that match the table names
+$</code></pre></div>
+<p>The schema and table name are given by separate arguments.
+The connection string uses the &ldquo;lib/pq&rdquo; format like this:
+<code>postgres://pqgotest:password@localhost/pqgotest?sslmode=verify-full</code>.</p>
+
+<p>This string must be stored in an environment variable.
+It is the variable name that is specified to the &ldquo;urlvar&rdquo; argument.</p>
+
+<p>Here is an actual command, preceded by exporting the DB URL:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">DBURL<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;postgresql://postgres:postgres@localhost/postgres?sslmode=disable&#34;</span>
+export DBURL
+
+pgcopy <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>    -schema public <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>    -table node <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>    -input $HOME/data/hier/hier_nodes.csv <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>    -urlvar DBURL</code></pre></div>
+<p>Finally, notice that the CSV file must have headers
+that match the column names in the table (case insensitive).</p>
+
+
+</article>
+
+
+<section class="post-nav">
+    <ul>
+        
+        <li>
+            <a href="https://mandolyte.github.io/explorations/posts/db-utils/"><i class="fa fa-chevron-circle-left"></i> Database Utilities</a>
+        </li>
+        
+        
+    </ul>
+</section>
+    
+
+
+
+
+
+</main>
+    <footer>
+        <h6>Copyright &copy; 2018 - Cecil New | 
+            Rendered by <a href="https://gohugo.io" title="Hugo">Hugo</a> |
+            <a href="https://mandolyte.github.io/explorations/index.xml">Subscribe</a></h6>
+    </footer>
+</div>
+<script src="https://mandolyte.github.io/explorations/js/scripts.js"></script>
+</body>
+
+</html>

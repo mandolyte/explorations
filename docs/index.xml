@@ -42,6 +42,66 @@ You can find out more by peeking at my profiles on social media.</description>
     </item>
     
     <item>
+      <title>Using pgcopy in db-utils</title>
+      <link>https://mandolyte.github.io/explorations/posts/using-pgcopy-in-db-utils/</link>
+      <pubDate>Fri, 20 Apr 2018 10:17:04 -0400</pubDate>
+      
+      <guid>https://mandolyte.github.io/explorations/posts/using-pgcopy-in-db-utils/</guid>
+      <description>The &amp;ldquo;pgcopy&amp;rdquo; utility will import a CSV file using the &amp;ldquo;lib/pq&amp;rdquo; copy-in-schema function. It is one of the fastest ways to import into a Postgres database.
+Using the &amp;ldquo;-help&amp;rdquo; options shows:</description>
+    </item>
+    
+    <item>
+      <title>Database Utilities</title>
+      <link>https://mandolyte.github.io/explorations/posts/db-utils/</link>
+      <pubDate>Fri, 20 Apr 2018 10:03:59 -0400</pubDate>
+      
+      <guid>https://mandolyte.github.io/explorations/posts/db-utils/</guid>
+      <description>I have completed some utilities for databases. This post is an overview of what it available. Other posts will contain details on each&amp;hellip; or you can just read the READMEs if you can&amp;rsquo;t wait.</description>
+    </item>
+    
+    <item>
+      <title>Markdown to PDF</title>
+      <link>https://mandolyte.github.io/explorations/posts/markdown-to-pdf/</link>
+      <pubDate>Thu, 19 Apr 2018 21:58:01 -0400</pubDate>
+      
+      <guid>https://mandolyte.github.io/explorations/posts/markdown-to-pdf/</guid>
+      <description>I recently completed the initial release of a Markdown to PDF package.
+Repo is named &amp;ldquo;mdtopdf&amp;rdquo; and is here. Docs are here.
+The supported Markdown elements are:
+ Emphasized and strong text Headings 1-6 Ordered and unordered lists Nested lists Images Tables Links Code blocks and back-ticked text  In the &amp;ldquo;cmd&amp;rdquo; folder is an example of using the package and it contains both a test markdown file and the resultant PDF file.</description>
+    </item>
+    
+    <item>
+      <title>Gofpdf: Create a Pdf Table From a CSV File</title>
+      <link>https://mandolyte.github.io/explorations/posts/gofpdf-create-a-pdf-table-from-a-csv-file/</link>
+      <pubDate>Thu, 19 Apr 2018 21:43:08 -0400</pubDate>
+      
+      <guid>https://mandolyte.github.io/explorations/posts/gofpdf-create-a-pdf-table-from-a-csv-file/</guid>
+      <description>Creating a PDF table from a CSV file poses some challenges in fitting to the page without wrapping text content within the cell. This example here approaches the problem this way:</description>
+    </item>
+    
+    <item>
+      <title>Gofpdf: Creating a Numbered List</title>
+      <link>https://mandolyte.github.io/explorations/posts/gofpdf-creating-a-numbered-list/</link>
+      <pubDate>Thu, 19 Apr 2018 21:35:16 -0400</pubDate>
+      
+      <guid>https://mandolyte.github.io/explorations/posts/gofpdf-creating-a-numbered-list/</guid>
+      <description>This example shows how to create a number list of items here. It includes use of several methods:
+ It uses GetStringWidth() to get the point width of the letter &amp;ldquo;m&amp;rdquo;.</description>
+    </item>
+    
+    <item>
+      <title>Gofpdf: Creating a Pdf From a Text File</title>
+      <link>https://mandolyte.github.io/explorations/posts/gofpdf-creating-a-pdf-from-a-text-file/</link>
+      <pubDate>Thu, 19 Apr 2018 21:24:22 -0400</pubDate>
+      
+      <guid>https://mandolyte.github.io/explorations/posts/gofpdf-creating-a-pdf-from-a-text-file/</guid>
+      <description>I plan to create some examples using the gofpdf package, hopefully useful in their own right.
+The first example creates a PDF file from a text file or STDIN. Here are a couple of use cases taken from the &amp;ldquo;readme&amp;rdquo;:</description>
+    </item>
+    
+    <item>
       <title>Xml Identity Transform</title>
       <link>https://mandolyte.github.io/explorations/posts/xml-identity-transform/</link>
       <pubDate>Sat, 14 Apr 2018 21:52:09 -0400</pubDate>

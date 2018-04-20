@@ -1,0 +1,189 @@
+<!doctype html>
+
+<html lang="en">
+
+<head>
+  <title>Explorations ... Go Packages</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="The HTML5 Herald" />
+  <meta name="author" content="Cecil New" />
+  <meta name="generator" content="Hugo 0.38.2" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Slab|Ruda" />
+  <link rel="stylesheet" type="text/css" href="https://mandolyte.github.io/explorations/css/styles.css" />
+</head>
+
+<body>
+  <div id="container">
+    <header>
+      <h1>
+                <a href="https://mandolyte.github.io/explorations/">Explorations &hellip; Go Packages</a>
+            </h1>
+
+      <ul id="social-media">
+         
+        <li><a href="https://www.linkedin.com/in/cecil-new-06835714/"><i class="fa fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+         
+        <li><a href="https://github.com/mandolyte"><i class="fa fa-github fa-lg" aria-hidden="true"></i></a></li>
+            
+	<li> <a href="https://google.com/+CecilNew"><i class="fa fa-google-plus fa-lg" aria-hidden="true"></i></a></li>
+        
+      </ul>
+      
+      <p><em>&hellip; tender mercies.</em></p>
+      
+    </header>
+
+    
+<nav>
+    <ul>
+        
+        <li>
+            <a class="" href="https://mandolyte.github.io/explorations/posts/">
+                <i class="fa-li fa  fa-lg"></i><span>Posts</span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="" href="https://mandolyte.github.io/explorations/tags/">
+                <i class="fa-li fa  fa-lg"></i><span>Tags</span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="" href="https://mandolyte.github.io/explorations/feedback/">
+                <i class="fa-li fa  fa-lg"></i><span>Feedback</span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="" href="https://mandolyte.github.io/explorations/about/">
+                <i class="fa-li fa  fa-lg"></i><span>About me</span>
+            </a>
+        </li>
+        
+    </ul>
+</nav>
+
+    <main>
+
+
+
+
+<article>
+
+    <h1>Database Utilities</h1>
+
+    
+        <aside>
+    <ul>
+        <li>
+            <time class="post-date" datetime="2018-04-20T10:03:59-04:00">Apr 20, 2018</time>
+        </li>
+        
+        
+
+        
+        <li>
+            <em>
+                
+                    
+                    <a href="https://mandolyte.github.io/explorations/tags/databases/">#databases</a>
+                
+                    , 
+                    <a href="https://mandolyte.github.io/explorations/tags/go/">#go</a>
+                
+            </em>
+        </li>
+        
+
+        <li>2 min read</li>
+    </ul>
+</aside>
+    
+
+    <p>I have completed some utilities for databases.
+This post is an overview of what it available.
+Other posts will contain details on each&hellip;
+or you can just read the READMEs if you can&rsquo;t wait.</p>
+
+<p>The repo is <a href="https://github.com/mandolyte/db-utils">here</a>.</p>
+
+<p>There are three utilities:</p>
+
+<ul>
+<li><em>pgcopy</em>: This utility will use the Postgres
+<a href="https://godoc.org/github.com/lib/pq#CopyInSchema">Copy API</a>
+to import data into a Postgres database.
+It is one of the fastest ways to import data.
+The data to be imported must be a CSV file and
+the CSV must have column headers that match the target table.</li>
+<li><em>modifydb</em>: This utility will run a modification SQL statement,
+which makes it useful for scripting. It will also take an optional
+input CSV file and run an SQL statement for each row
+using the columns as substitution parameters.
+In the README examples, I use an INSERT statement in combination
+with an input CSV to essentially import the CSV into the database.</li>
+<li><em>querydb</em>: This utility will run a query and
+output the results to a CSV file. Similar to &ldquo;modifydb&rdquo;,
+it can also take an optional CSV file as input.
+In this case, the query is run once per row of input
+and the column values in each row is used as substitution parameters.
+This technique is useful to create a pipeline of queries,
+each using the output of the previous to create a new dataset.
+When faced with a big data problem, it is often useful to decompose
+a large complex query into smaller ones and chain them together - which
+is why this is designed the way it is.</li>
+</ul>
+
+<p>There is also a folder in the repo named &ldquo;data_prep&rdquo;.
+I added it to the repo to show how to create a nice hierarchical dataset.
+I found such datasets hard to find.
+So I created a process to create a hierarchical dataset
+using the Linux filesystem (Ubuntu 17.10).</p>
+
+<p>If you think of the dataset as a graph, then the nodes
+are the filenames and folder names (fully qualified).
+This data is in the &ldquo;node&rdquo; table.
+The edge table contains a &ldquo;from&rdquo; and a &ldquo;to&rdquo;
+linking folders to its child folders and its files (leaf nodes).</p>
+
+<p>Hope you find this useful!</p>
+
+
+</article>
+
+
+<section class="post-nav">
+    <ul>
+        
+        <li>
+            <a href="https://mandolyte.github.io/explorations/posts/markdown-to-pdf/"><i class="fa fa-chevron-circle-left"></i> Markdown to PDF</a>
+        </li>
+        
+        
+        <li>
+            <a href="https://mandolyte.github.io/explorations/posts/using-pgcopy-in-db-utils/">Using pgcopy in db-utils <i class="fa fa-chevron-circle-right"></i> </a>
+        </li>
+        
+    </ul>
+</section>
+    
+
+
+
+
+
+</main>
+    <footer>
+        <h6>Copyright &copy; 2018 - Cecil New | 
+            Rendered by <a href="https://gohugo.io" title="Hugo">Hugo</a> |
+            <a href="https://mandolyte.github.io/explorations/index.xml">Subscribe</a></h6>
+    </footer>
+</div>
+<script src="https://mandolyte.github.io/explorations/js/scripts.js"></script>
+</body>
+
+</html>

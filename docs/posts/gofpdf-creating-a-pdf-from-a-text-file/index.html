@@ -72,102 +72,76 @@
 
 
 
-<section id="list">
+<article>
+
+    <h1>Gofpdf: Creating a Pdf From a Text File</h1>
 
     
+        <aside>
+    <ul>
+        <li>
+            <time class="post-date" datetime="2018-04-19T21:24:22-04:00">Apr 19, 2018</time>
+        </li>
+        
+        
 
-    
-        <h2>#go</h2>
+        
+        <li>
+            <em>
+                
+                    
+                    <a href="https://mandolyte.github.io/explorations/tags/pdf/">#pdf</a>
+                
+                    , 
+                    <a href="https://mandolyte.github.io/explorations/tags/go/">#go</a>
+                
+            </em>
+        </li>
+        
+
+        <li>1 min read</li>
+    </ul>
+</aside>
     
 
-    
+    <p>I plan to create some examples using the gofpdf package,
+hopefully useful in their own right.</p>
 
-    
+<p>The first example creates a PDF file from a text file or STDIN.
+Here are a couple of use cases taken from the &ldquo;readme&rdquo;:</p>
 
-    <h3>2018</h3>
+<ul>
+<li>Example 1: create a PDF of the source code, using a courier font.</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">go run textToPdf.go -i textToPdf.go -font Courier -o $HOME/data/textToPdf.pdf</code></pre></div>
+<ul>
+<li>Example 2: cram as much as possible onto the page,
+using 8 point font and 8 point line height.</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">go run textToPdf.go -lh <span style="color:#ae81ff">8</span> -fs <span style="color:#ae81ff">8</span> -i textToPdf.go -font Courier -o $HOME/data/textToPdf.pdf</code></pre></div>
+<p>The repo is <a href="https://github.com/mandolyte/pdf-utils">here</a>.
+I hope to create some other examples soon!</p>
+
+
+</article>
+
+
+<section class="post-nav">
     <ul>
         
         <li>
-            <a href="https://mandolyte.github.io/explorations/posts/using-pgcopy-in-db-utils/">Using pgcopy in db-utils</a>
-            <time class="date-meta">Apr 20</time>
+            <a href="https://mandolyte.github.io/explorations/posts/xml-identity-transform/"><i class="fa fa-chevron-circle-left"></i> Xml Identity Transform</a>
         </li>
         
-        <li>
-            <a href="https://mandolyte.github.io/explorations/posts/db-utils/">Database Utilities</a>
-            <time class="date-meta">Apr 20</time>
-        </li>
         
         <li>
-            <a href="https://mandolyte.github.io/explorations/posts/markdown-to-pdf/">Markdown to PDF</a>
-            <time class="date-meta">Apr 19</time>
+            <a href="https://mandolyte.github.io/explorations/posts/gofpdf-creating-a-numbered-list/">Gofpdf: Creating a Numbered List <i class="fa fa-chevron-circle-right"></i> </a>
         </li>
         
     </ul>
-    
-    
-
 </section>
+    
 
-
-
-<ul class="pagination">
-    
-    <li>
-        <a href="https://mandolyte.github.io/explorations/tags/go/" aria-label="First"><span aria-hidden="true">&laquo;&laquo;</span></a>
-    </li>
-    
-    <li
-    class="disabled">
-    <a href="" aria-label="Previous"><span aria-hidden="true">&laquo;</span></a>
-    </li>
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    <li
-    class="active"><a href="https://mandolyte.github.io/explorations/tags/go/">1</a></li>
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    <li
-    ><a href="https://mandolyte.github.io/explorations/tags/go/page/2/">2</a></li>
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    <li
-    ><a href="https://mandolyte.github.io/explorations/tags/go/page/3/">3</a></li>
-    
-    
-    <li
-    >
-    <a href="https://mandolyte.github.io/explorations/tags/go/page/2/" aria-label="Next"><span aria-hidden="true">&raquo;</span></a>
-    </li>
-    
-    <li>
-        <a href="https://mandolyte.github.io/explorations/tags/go/page/3/" aria-label="Last"><span aria-hidden="true">&raquo;&raquo;</span></a>
-    </li>
-    
-</ul>
 
 
 

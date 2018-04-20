@@ -4,7 +4,7 @@
   
   <url>
     <loc>https://mandolyte.github.io/explorations/posts/</loc>
-    <lastmod>2018-04-14T21:52:09-04:00</lastmod>
+    <lastmod>2018-04-20T10:17:04-04:00</lastmod>
   </url>
   
   <url>
@@ -20,6 +20,36 @@
   <url>
     <loc>https://mandolyte.github.io/explorations/about/</loc>
     <lastmod>2014-04-09T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://mandolyte.github.io/explorations/posts/using-pgcopy-in-db-utils/</loc>
+    <lastmod>2018-04-20T10:17:04-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://mandolyte.github.io/explorations/posts/db-utils/</loc>
+    <lastmod>2018-04-20T10:03:59-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://mandolyte.github.io/explorations/posts/markdown-to-pdf/</loc>
+    <lastmod>2018-04-19T21:58:01-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://mandolyte.github.io/explorations/posts/gofpdf-create-a-pdf-table-from-a-csv-file/</loc>
+    <lastmod>2018-04-19T21:43:08-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://mandolyte.github.io/explorations/posts/gofpdf-creating-a-numbered-list/</loc>
+    <lastmod>2018-04-19T21:35:16-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://mandolyte.github.io/explorations/posts/gofpdf-creating-a-pdf-from-a-text-file/</loc>
+    <lastmod>2018-04-19T21:24:22-04:00</lastmod>
   </url>
   
   <url>
@@ -59,6 +89,18 @@
   </url>
   
   <url>
+    <loc>https://mandolyte.github.io/explorations/tags/csv/</loc>
+    <lastmod>2018-04-19T21:43:08-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://mandolyte.github.io/explorations/tags/databases/</loc>
+    <lastmod>2018-04-20T10:17:04-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://mandolyte.github.io/explorations/</loc>
     <lastmod>2014-04-16T00:00:00+00:00</lastmod>
     <priority>0</priority>
@@ -72,13 +114,31 @@
   
   <url>
     <loc>https://mandolyte.github.io/explorations/tags/go/</loc>
-    <lastmod>2018-04-14T21:40:30-04:00</lastmod>
+    <lastmod>2018-04-20T10:17:04-04:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://mandolyte.github.io/explorations/tags/hugo/</loc>
     <lastmod>2018-04-14T21:40:24-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://mandolyte.github.io/explorations/tags/markdown/</loc>
+    <lastmod>2018-04-19T21:58:01-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://mandolyte.github.io/explorations/tags/pdf/</loc>
+    <lastmod>2018-04-19T21:58:01-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://mandolyte.github.io/explorations/tags/postgres/</loc>
+    <lastmod>2018-04-20T10:17:04-04:00</lastmod>
     <priority>0</priority>
   </url>
   

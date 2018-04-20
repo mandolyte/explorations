@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Postgres on Explorations ... Go Packages</title>
+    <link>https://mandolyte.github.io/explorations/tags/postgres/</link>
+    <description>Recent content in Postgres on Explorations ... Go Packages</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <copyright>Copyright &amp;copy; 2018 - Cecil New</copyright>
+    <lastBuildDate>Fri, 20 Apr 2018 10:17:04 -0400</lastBuildDate>
+    
+	<atom:link href="https://mandolyte.github.io/explorations/tags/postgres/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Using pgcopy in db-utils</title>
+      <link>https://mandolyte.github.io/explorations/posts/using-pgcopy-in-db-utils/</link>
+      <pubDate>Fri, 20 Apr 2018 10:17:04 -0400</pubDate>
+      
+      <guid>https://mandolyte.github.io/explorations/posts/using-pgcopy-in-db-utils/</guid>
+      <description>The &amp;ldquo;pgcopy&amp;rdquo; utility will import a CSV file using the &amp;ldquo;lib/pq&amp;rdquo; copy-in-schema function. It is one of the fastest ways to import into a Postgres database.
+Using the &amp;ldquo;-help&amp;rdquo; options shows:</description>
+    </item>
+    
+  </channel>
+</rss>

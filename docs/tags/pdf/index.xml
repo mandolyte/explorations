@@ -1,34 +1,15 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Go on Explorations ... Go Packages</title>
-    <link>https://mandolyte.github.io/explorations/tags/go/</link>
-    <description>Recent content in Go on Explorations ... Go Packages</description>
+    <title>Pdf on Explorations ... Go Packages</title>
+    <link>https://mandolyte.github.io/explorations/tags/pdf/</link>
+    <description>Recent content in Pdf on Explorations ... Go Packages</description>
     <generator>Hugo -- gohugo.io</generator>
     <copyright>Copyright &amp;copy; 2018 - Cecil New</copyright>
-    <lastBuildDate>Fri, 20 Apr 2018 10:17:04 -0400</lastBuildDate>
+    <lastBuildDate>Thu, 19 Apr 2018 21:58:01 -0400</lastBuildDate>
     
-	<atom:link href="https://mandolyte.github.io/explorations/tags/go/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://mandolyte.github.io/explorations/tags/pdf/index.xml" rel="self" type="application/rss+xml" />
     
-    
-    <item>
-      <title>Using pgcopy in db-utils</title>
-      <link>https://mandolyte.github.io/explorations/posts/using-pgcopy-in-db-utils/</link>
-      <pubDate>Fri, 20 Apr 2018 10:17:04 -0400</pubDate>
-      
-      <guid>https://mandolyte.github.io/explorations/posts/using-pgcopy-in-db-utils/</guid>
-      <description>The &amp;ldquo;pgcopy&amp;rdquo; utility will import a CSV file using the &amp;ldquo;lib/pq&amp;rdquo; copy-in-schema function. It is one of the fastest ways to import into a Postgres database.
-Using the &amp;ldquo;-help&amp;rdquo; options shows:</description>
-    </item>
-    
-    <item>
-      <title>Database Utilities</title>
-      <link>https://mandolyte.github.io/explorations/posts/db-utils/</link>
-      <pubDate>Fri, 20 Apr 2018 10:03:59 -0400</pubDate>
-      
-      <guid>https://mandolyte.github.io/explorations/posts/db-utils/</guid>
-      <description>I have completed some utilities for databases. This post is an overview of what it available. Other posts will contain details on each&amp;hellip; or you can just read the READMEs if you can&amp;rsquo;t wait.</description>
-    </item>
     
     <item>
       <title>Markdown to PDF</title>
@@ -69,15 +50,6 @@ The supported Markdown elements are:
       <guid>https://mandolyte.github.io/explorations/posts/gofpdf-creating-a-pdf-from-a-text-file/</guid>
       <description>I plan to create some examples using the gofpdf package, hopefully useful in their own right.
 The first example creates a PDF file from a text file or STDIN. Here are a couple of use cases taken from the &amp;ldquo;readme&amp;rdquo;:</description>
-    </item>
-    
-    <item>
-      <title>Using Chromebook for Go Development</title>
-      <link>https://mandolyte.github.io/explorations/posts/using-chromebook-for-go-development/</link>
-      <pubDate>Sat, 14 Apr 2018 21:40:30 -0400</pubDate>
-      
-      <guid>https://mandolyte.github.io/explorations/posts/using-chromebook-for-go-development/</guid>
-      <description>The process for installing a number of Linux variants is fairly well documented and findable with web searches. I have spent some time playing with this and have settled on an approach that works well for me.</description>
     </item>
     
   </channel>

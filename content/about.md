@@ -12,4 +12,4 @@ Elder geek!
 
 You can find out more by peeking at my profiles on social media.
 
-
+About that tag line? [Tender Mercies](https://www.rogerebert.com/reviews/great-movie-tender-mercies-1983)...

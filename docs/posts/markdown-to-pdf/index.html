@@ -1,0 +1,183 @@
+<!doctype html>
+
+<html lang="en">
+
+<head>
+  <title>Explorations ... Go Packages</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="The HTML5 Herald" />
+  <meta name="author" content="Cecil New" />
+  <meta name="generator" content="Hugo 0.38.2" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Slab|Ruda" />
+  <link rel="stylesheet" type="text/css" href="https://mandolyte.github.io/explorations/css/styles.css" />
+</head>
+
+<body>
+  <div id="container">
+    <header>
+      <h1>
+                <a href="https://mandolyte.github.io/explorations/">Explorations &hellip; Go Packages</a>
+            </h1>
+
+      <ul id="social-media">
+         
+        <li><a href="https://www.linkedin.com/in/cecil-new-06835714/"><i class="fa fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+         
+        <li><a href="https://github.com/mandolyte"><i class="fa fa-github fa-lg" aria-hidden="true"></i></a></li>
+            
+	<li> <a href="https://google.com/+CecilNew"><i class="fa fa-google-plus fa-lg" aria-hidden="true"></i></a></li>
+        
+      </ul>
+      
+      <p><em>&hellip; tender mercies.</em></p>
+      
+    </header>
+
+    
+<nav>
+    <ul>
+        
+        <li>
+            <a class="" href="https://mandolyte.github.io/explorations/posts/">
+                <i class="fa-li fa  fa-lg"></i><span>Posts</span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="" href="https://mandolyte.github.io/explorations/tags/">
+                <i class="fa-li fa  fa-lg"></i><span>Tags</span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="" href="https://mandolyte.github.io/explorations/feedback/">
+                <i class="fa-li fa  fa-lg"></i><span>Feedback</span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="" href="https://mandolyte.github.io/explorations/about/">
+                <i class="fa-li fa  fa-lg"></i><span>About me</span>
+            </a>
+        </li>
+        
+    </ul>
+</nav>
+
+    <main>
+
+
+
+
+<article>
+
+    <h1>Markdown to PDF</h1>
+
+    
+        <aside>
+    <ul>
+        <li>
+            <time class="post-date" datetime="2018-04-19T21:58:01-04:00">Apr 19, 2018</time>
+        </li>
+        
+        
+
+        
+        <li>
+            <em>
+                
+                    
+                    <a href="https://mandolyte.github.io/explorations/tags/markdown/">#markdown</a>
+                
+                    , 
+                    <a href="https://mandolyte.github.io/explorations/tags/pdf/">#pdf</a>
+                
+                    , 
+                    <a href="https://mandolyte.github.io/explorations/tags/go/">#go</a>
+                
+            </em>
+        </li>
+        
+
+        <li>1 min read</li>
+    </ul>
+</aside>
+    
+
+    <p>I recently completed the initial release of a Markdown to PDF package.</p>
+
+<p>Repo is named &ldquo;mdtopdf&rdquo; and is <a href="https://github.com/mandolyte/mdtopdf">here</a>.
+Docs are <a href="https://godoc.org/github.com/mandolyte/mdtopdf">here</a>.</p>
+
+<p>The supported Markdown elements are:</p>
+
+<ul>
+<li>Emphasized and strong text</li>
+<li>Headings 1-6</li>
+<li>Ordered and unordered lists</li>
+<li>Nested lists</li>
+<li>Images</li>
+<li>Tables</li>
+<li>Links</li>
+<li>Code blocks and back-ticked text</li>
+</ul>
+
+<p>In the &ldquo;cmd&rdquo; folder is an example of using the package
+and it contains both a test markdown file and the resultant PDF file.
+There is a slightly different version of the command line utility
+in my &ldquo;pdf-utils&rdquo; repo.</p>
+
+<p>The text styles can be modified and the example shows some of this
+ using the package&rsquo;s &ldquo;Styler&rdquo; struct:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#66d9ef">type</span> <span style="color:#a6e22e">Color</span> <span style="color:#66d9ef">struct</span> {
+    <span style="color:#a6e22e">Red</span>, <span style="color:#a6e22e">Green</span>, <span style="color:#a6e22e">Blue</span> <span style="color:#66d9ef">int</span>
+}
+
+<span style="color:#66d9ef">type</span> <span style="color:#a6e22e">Styler</span> <span style="color:#66d9ef">struct</span> {
+    <span style="color:#a6e22e">Font</span>      <span style="color:#66d9ef">string</span>
+    <span style="color:#a6e22e">Style</span>     <span style="color:#66d9ef">string</span>
+    <span style="color:#a6e22e">Size</span>      <span style="color:#66d9ef">float64</span>
+    <span style="color:#a6e22e">Spacing</span>   <span style="color:#66d9ef">float64</span>
+    <span style="color:#a6e22e">TextColor</span> <span style="color:#a6e22e">Color</span>
+    <span style="color:#a6e22e">FillColor</span> <span style="color:#a6e22e">Color</span>
+}</code></pre></div>
+<p>See details on limitations and things to do on the README.</p>
+
+
+</article>
+
+
+<section class="post-nav">
+    <ul>
+        
+        <li>
+            <a href="https://mandolyte.github.io/explorations/posts/gofpdf-create-a-pdf-table-from-a-csv-file/"><i class="fa fa-chevron-circle-left"></i> Gofpdf: Create a Pdf Table From a CSV File</a>
+        </li>
+        
+        
+        <li>
+            <a href="https://mandolyte.github.io/explorations/posts/db-utils/">Database Utilities <i class="fa fa-chevron-circle-right"></i> </a>
+        </li>
+        
+    </ul>
+</section>
+    
+
+
+
+
+
+</main>
+    <footer>
+        <h6>Copyright &copy; 2018 - Cecil New | 
+            Rendered by <a href="https://gohugo.io" title="Hugo">Hugo</a> |
+            <a href="https://mandolyte.github.io/explorations/index.xml">Subscribe</a></h6>
+    </footer>
+</div>
+<script src="https://mandolyte.github.io/explorations/js/scripts.js"></script>
+</body>
+
+</html>
