@@ -1,8 +1,8 @@
 +++
 title = "Using Experimental Go Generics"
 date = 2018-07-04T13:19:13-04:00
-draft = true
-tags = []
+draft = false
+tags = ["generics"]
 categories = []
 +++
 

@@ -42,6 +42,15 @@ You can find out more by peeking at my profiles on social media.</description>
     </item>
     
     <item>
+      <title>Using Experimental Go Generics</title>
+      <link>https://mandolyte.github.io/explorations/posts/using-experimental-go-generics/</link>
+      <pubDate>Wed, 04 Jul 2018 13:19:13 -0400</pubDate>
+      
+      <guid>https://mandolyte.github.io/explorations/posts/using-experimental-go-generics/</guid>
+      <description>Experience with Experimental Go Generics Overview There are at least two experimental implementations of Go that add generics (see note 1). I experimented with albrow/fo. I don&amp;rsquo;t know enough to classify the approached used by fo, but in simple terms, both type declarations and functions/methods are extended to take optional type parameters</description>
+    </item>
+    
+    <item>
       <title>Using querydb in db-utils</title>
       <link>https://mandolyte.github.io/explorations/posts/using-querydb-in-db-utils/</link>
       <pubDate>Fri, 20 Apr 2018 10:44:45 -0400</pubDate>

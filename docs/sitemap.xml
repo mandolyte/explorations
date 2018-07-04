@@ -4,7 +4,7 @@
   
   <url>
     <loc>https://mandolyte.github.io/explorations/posts/</loc>
-    <lastmod>2018-04-20T10:44:45-04:00</lastmod>
+    <lastmod>2018-07-04T13:19:13-04:00</lastmod>
   </url>
   
   <url>
@@ -20,6 +20,11 @@
   <url>
     <loc>https://mandolyte.github.io/explorations/about/</loc>
     <lastmod>2014-04-09T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://mandolyte.github.io/explorations/posts/using-experimental-go-generics/</loc>
+    <lastmod>2018-07-04T13:19:13-04:00</lastmod>
   </url>
   
   <url>
@@ -113,6 +118,12 @@
   <url>
     <loc>https://mandolyte.github.io/explorations/</loc>
     <lastmod>2014-04-16T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://mandolyte.github.io/explorations/tags/generics/</loc>
+    <lastmod>2018-07-04T13:19:13-04:00</lastmod>
     <priority>0</priority>
   </url>
   
