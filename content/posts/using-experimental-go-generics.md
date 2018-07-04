@@ -6,8 +6,6 @@ tags = ["generics"]
 categories = []
 +++
 
-# Experience with Experimental Go Generics
-
 ## Overview
 
 There are at least two experimental implementations of Go that add generics (see note 1). I experimented with
