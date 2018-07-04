@@ -1,0 +1,251 @@
+<!doctype html>
+
+<html lang="en">
+
+<head>
+  <title>Explorations ... Go Packages</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="The HTML5 Herald" />
+  <meta name="author" content="Cecil New" />
+  <meta name="generator" content="Hugo 0.38.2" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Slab|Ruda" />
+  <link rel="stylesheet" type="text/css" href="https://mandolyte.github.io/explorations/css/styles.css" />
+</head>
+
+<body>
+  <div id="container">
+    <header>
+      <h1>
+                <a href="https://mandolyte.github.io/explorations/">Explorations &hellip; Go Packages</a>
+            </h1>
+
+      <ul id="social-media">
+         
+        <li><a href="https://www.linkedin.com/in/cecil-new-06835714/"><i class="fa fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+         
+        <li><a href="https://github.com/mandolyte"><i class="fa fa-github fa-lg" aria-hidden="true"></i></a></li>
+            
+	<li> <a href="https://google.com/+CecilNew"><i class="fa fa-google-plus fa-lg" aria-hidden="true"></i></a></li>
+        
+      </ul>
+      
+      <p><em>&hellip; tender mercies.</em></p>
+      
+    </header>
+
+    
+<nav>
+    <ul>
+        
+        <li>
+            <a class="" href="https://mandolyte.github.io/explorations/posts/">
+                <i class="fa-li fa  fa-lg"></i><span>Posts</span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="" href="https://mandolyte.github.io/explorations/tags/">
+                <i class="fa-li fa  fa-lg"></i><span>Tags</span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="" href="https://mandolyte.github.io/explorations/feedback/">
+                <i class="fa-li fa  fa-lg"></i><span>Feedback</span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="" href="https://mandolyte.github.io/explorations/about/">
+                <i class="fa-li fa  fa-lg"></i><span>About me</span>
+            </a>
+        </li>
+        
+    </ul>
+</nav>
+
+    <main>
+
+
+
+
+<article>
+
+    <h1>Using Experimental Go Generics</h1>
+
+    
+        <aside>
+    <ul>
+        <li>
+            <time class="post-date" datetime="2018-07-04T13:19:13-04:00">Jul 4, 2018</time>
+        </li>
+        
+        
+
+        
+        <li>
+            <em>
+                
+                    
+                    <a href="https://mandolyte.github.io/explorations/tags/generics/">#generics</a>
+                
+            </em>
+        </li>
+        
+
+        <li>4 min read</li>
+    </ul>
+</aside>
+    
+
+    
+
+<h1 id="experience-with-experimental-go-generics">Experience with Experimental Go Generics</h1>
+
+<h2 id="overview">Overview</h2>
+
+<p>There are at least two experimental implementations of Go that add generics (see note 1). I experimented with
+<a href="https://github.com/albrow/fo">albrow/fo</a>. I don&rsquo;t know enough to classify the approached used by <code>fo</code>,
+but in simple terms, both type declarations and functions/methods are extended to take optional type parameters</p>
+
+<p>I performed the experiment by porting some of the algorithms in
+<code>floyernick/Data-Structures-and-Algorithms</code>. These data structures and algorithms are all written
+using integers and the Go developer
+is expected to copy/paste/modify in order to use them for something other than integers.</p>
+
+<p>Here is an example of reversing the elements of a slice in the generic form:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">reverseArray</span>[<span style="color:#a6e22e">T</span>](<span style="color:#a6e22e">a</span> []<span style="color:#a6e22e">T</span>) {
+	<span style="color:#a6e22e">i</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">0</span>
+	<span style="color:#a6e22e">u</span> <span style="color:#f92672">:=</span> len(<span style="color:#a6e22e">a</span>) <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>
+	<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">i</span> &lt; <span style="color:#a6e22e">u</span> {
+		<span style="color:#a6e22e">a</span>[<span style="color:#a6e22e">i</span>], <span style="color:#a6e22e">a</span>[<span style="color:#a6e22e">u</span>] = <span style="color:#a6e22e">a</span>[<span style="color:#a6e22e">u</span>], <span style="color:#a6e22e">a</span>[<span style="color:#a6e22e">i</span>]
+		<span style="color:#a6e22e">i</span>, <span style="color:#a6e22e">u</span> = <span style="color:#a6e22e">i</span><span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>, <span style="color:#a6e22e">u</span><span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>
+	}
+}</code></pre></div>
+<p>Notice that type parameters are listed between square brackets and the
+placeholder <code>T</code>, is used in the function.</p>
+
+<p>Then to use it, you supply the actual type at the calling location:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#a6e22e">ia</span> <span style="color:#f92672">:=</span> []<span style="color:#66d9ef">int</span>{<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">2</span>,<span style="color:#ae81ff">3</span>} 
+<span style="color:#a6e22e">reverseArray</span>[<span style="color:#66d9ef">int</span>](<span style="color:#a6e22e">ia</span>)</code></pre></div>
+<p>Again, notice the <code>[int]</code> after the function name, which specifies that T will be
+an integer in this case. To use a string slice instead:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#a6e22e">reverseArray</span>[<span style="color:#66d9ef">string</span>](<span style="color:#a6e22e">ia</span>)</code></pre></div>
+<p>This package has a number of limitations at present, but it is active and provides
+enough to experiment. The syntax used is, to borrow a math term, topologically
+equivalent to many other approaches. By this I mean, they all share many of the same
+pros and cons.</p>
+
+<p>My experiments are in repo <a href="https://github.com/mandolyte/fo-experiments">mandolyte/fo-experiments</a>.</p>
+
+<h2 id="summary">Summary</h2>
+
+<p>On the positive side, the syntax was easy to understand and use. I was able to work-around
+pretty easily all the issues I found. Since the package translates the <code>fo</code> code to <code>go</code> code,
+I did not get a feel for how compile times might be affected by this approach. The translated Go
+code is saved and you can take a look if you wish.</p>
+
+<p>The two issues I found are common to other approaches and have been discussed in detail elsewhere.
+I found it valuable to encounter them in concrete ways.</p>
+
+<p><em>The first issue is error handling.</em> The common Go idiom is to return two values with the second
+value holding a boolean or an error object (or nil if no error). Thus, for boolean cases:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>, <span style="color:#66d9ef">false</span> <span style="color:#75715e">// integers
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#34;&#34;</span>, <span style="color:#66d9ef">false</span> <span style="color:#75715e">// for strings
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0.0</span>, <span style="color:#66d9ef">false</span> <span style="color:#75715e">// for floats
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">return</span> <span style="color:#66d9ef">nil</span>, <span style="color:#66d9ef">false</span> <span style="color:#f92672">//</span> <span style="color:#66d9ef">for</span> <span style="color:#a6e22e">structs</span></code></pre></div>
+<p>Since there is no Go keyword that represents the zero value for all types, the generic code
+cannot sensibly use this two-value return method.
+One solution might be to expand <code>nil</code> or introduce a new keyword to represent a generic zero-value.
+Then, if a type was numeric, it might replace nil with zero. Of if a
+string, with &ldquo;&rdquo;. Of course, if the type was a struct, then <code>nil</code> works fine.</p>
+
+<p><em>The second issue is operator overloading.</em> Without overloading, the generic code cannot
+use equality or inequalify operators. However, since Go has anonymous functions, the user
+can write functions that perform the comparison and supply them to the generic code to use.
+This approach works rather well and simplifies expressing how to compare two (x,y) pairs
+(a Point type). Given my experience doing it this way, I think Go generics can easily
+live without operator overloading.</p>
+
+<p>See my repo for other examples which include:</p>
+
+<ul>
+<li>a circular buffer (i.e., a ring)</li>
+<li>a function to revers the elements in a slice</li>
+<li>a double linked list</li>
+<li>serveral slice search methods (linear, binary, and ternary)</li>
+</ul>
+
+<p>Finally, here is a complete working example of a Bubble Sort, where the generic function
+is used for integers, floating point numbers, and strings.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#f92672">package</span> <span style="color:#a6e22e">main</span>
+
+<span style="color:#f92672">import</span> <span style="color:#e6db74">&#34;fmt&#34;</span>
+
+<span style="color:#66d9ef">func</span> <span style="color:#a6e22e">bubbleSort</span>[<span style="color:#a6e22e">T</span>](<span style="color:#a6e22e">gt</span> <span style="color:#66d9ef">func</span>(<span style="color:#a6e22e">T</span>,<span style="color:#a6e22e">T</span>) <span style="color:#66d9ef">bool</span>, <span style="color:#a6e22e">array</span> []<span style="color:#a6e22e">T</span>) {
+	<span style="color:#a6e22e">swapCount</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">1</span>
+	<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">swapCount</span> &gt; <span style="color:#ae81ff">0</span> {
+		<span style="color:#a6e22e">swapCount</span> = <span style="color:#ae81ff">0</span>
+		<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">itemIndex</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">itemIndex</span> &lt; len(<span style="color:#a6e22e">array</span>)<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>; <span style="color:#a6e22e">itemIndex</span><span style="color:#f92672">++</span> {
+			<span style="color:#75715e">//if array[itemIndex] &gt; array[itemIndex+1] {
+</span><span style="color:#75715e"></span>			<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">gt</span>(<span style="color:#a6e22e">array</span>[<span style="color:#a6e22e">itemIndex</span>], <span style="color:#a6e22e">array</span>[<span style="color:#a6e22e">itemIndex</span><span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>]) { 
+				<span style="color:#a6e22e">array</span>[<span style="color:#a6e22e">itemIndex</span>], <span style="color:#a6e22e">array</span>[<span style="color:#a6e22e">itemIndex</span><span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>] = <span style="color:#a6e22e">array</span>[<span style="color:#a6e22e">itemIndex</span><span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>], <span style="color:#a6e22e">array</span>[<span style="color:#a6e22e">itemIndex</span>]
+				<span style="color:#a6e22e">swapCount</span> <span style="color:#f92672">+=</span> <span style="color:#ae81ff">1</span>
+			}
+		}
+	}
+}
+
+<span style="color:#66d9ef">func</span> <span style="color:#a6e22e">main</span>() {
+	<span style="color:#a6e22e">ia</span> <span style="color:#f92672">:=</span> []<span style="color:#66d9ef">int</span>{<span style="color:#ae81ff">4</span>,<span style="color:#ae81ff">2</span>,<span style="color:#ae81ff">3</span>} 
+	<span style="color:#a6e22e">gti</span> <span style="color:#f92672">:=</span> <span style="color:#66d9ef">func</span>(<span style="color:#a6e22e">x</span>,<span style="color:#a6e22e">y</span> <span style="color:#66d9ef">int</span>) <span style="color:#66d9ef">bool</span> { <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">x</span> &gt; <span style="color:#a6e22e">y</span> }
+	<span style="color:#a6e22e">bubbleSort</span>[<span style="color:#66d9ef">int</span>](<span style="color:#a6e22e">gti</span>, <span style="color:#a6e22e">ia</span>)
+	<span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#a6e22e">ia</span>)
+	
+	<span style="color:#a6e22e">sa</span> <span style="color:#f92672">:=</span> []<span style="color:#66d9ef">string</span>{<span style="color:#e6db74">&#34;z&#34;</span>, <span style="color:#e6db74">&#34;b&#34;</span>, <span style="color:#e6db74">&#34;c&#34;</span>}
+	<span style="color:#a6e22e">gts</span> <span style="color:#f92672">:=</span> <span style="color:#66d9ef">func</span>(<span style="color:#a6e22e">x</span>,<span style="color:#a6e22e">y</span> <span style="color:#66d9ef">string</span>) <span style="color:#66d9ef">bool</span> { <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">x</span> &gt; <span style="color:#a6e22e">y</span> }
+	<span style="color:#a6e22e">bubbleSort</span>[<span style="color:#66d9ef">string</span>](<span style="color:#a6e22e">gts</span>, <span style="color:#a6e22e">sa</span>)
+	<span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#a6e22e">sa</span>)
+
+	<span style="color:#a6e22e">ra</span> <span style="color:#f92672">:=</span> []<span style="color:#66d9ef">float64</span>{<span style="color:#ae81ff">4.4</span>, <span style="color:#ae81ff">2.2</span>, <span style="color:#ae81ff">3.3</span>}
+	<span style="color:#a6e22e">gtf</span> <span style="color:#f92672">:=</span> <span style="color:#66d9ef">func</span>(<span style="color:#a6e22e">x</span>,<span style="color:#a6e22e">y</span> <span style="color:#66d9ef">float64</span>) <span style="color:#66d9ef">bool</span> { <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">x</span> &gt; <span style="color:#a6e22e">y</span> }
+	<span style="color:#a6e22e">bubbleSort</span>[<span style="color:#66d9ef">float64</span>](<span style="color:#a6e22e">gtf</span>, <span style="color:#a6e22e">ra</span>)
+	<span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#a6e22e">ra</span>)
+	
+}</code></pre></div>
+<p>(1) The other is <a href="https://github.com/cosmos72/gomacro">cosmo72/gomacro</a></p>
+
+
+</article>
+
+
+<section class="post-nav">
+    <ul>
+        
+        <li>
+            <a href="https://mandolyte.github.io/explorations/posts/using-querydb-in-db-utils/"><i class="fa fa-chevron-circle-left"></i> Using querydb in db-utils</a>
+        </li>
+        
+        
+    </ul>
+</section>
+    
+
+
+
+
+
+</main>
+    <footer>
+        <h6>Copyright &copy; 2018 - Cecil New | 
+            Rendered by <a href="https://gohugo.io" title="Hugo">Hugo</a> |
+            <a href="https://mandolyte.github.io/explorations/index.xml">Subscribe</a></h6>
+    </footer>
+</div>
+<script src="https://mandolyte.github.io/explorations/js/scripts.js"></script>
+</body>
+
+</html>
